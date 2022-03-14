@@ -1,0 +1,221 @@
+/* @font-face {
+    font-family: catthy;
+    src: url(fonts/CatthyWellingten.ttf);
+} */
+
+@font-face {
+    font-family: rafelya;
+    src: url(fonts/RafelyaCarrotin.ttf);
+}
+
+/* @font-face {
+    font-family: scientist;
+    src: url(fonts/TheScientist.ttf);
+} */
+
+.container {
+    /* display: flex; */
+    /* background-color: rgba(242, 195, 9, 0.989); */
+    background-color: #f4b910;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    font-size: larger;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+.padding-horizontal {
+    padding: 0 15%;
+}
+
+.intro-header {
+    color: #253213;
+    margin-bottom: 20%;
+}
+
+h1 {
+    margin-top: 0%;
+    font-family: rafelya !important;
+    font-size: 55px !important;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+    padding-top: 5%;
+    padding-right: 5%;
+    /* position: fixed; */
+}
+
+.nav {
+    color: #253213;
+}
+
+.passion-img {
+    /* display: flex; */
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+    /* mix-blend-mode: multiply; */
+}
+
+.hike {
+    mix-blend-mode: multiply;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table-of-content {
+    /* padding-left: 6%; */
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+.main-topic {
+    font-weight: bolder;
+    padding-bottom: 7px;
+    font-family: rafelya !important;
+    font-size: 25px !important;
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    list-style-type: none;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.divided-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #253213;
+    /* color: #f9e0db; */
+}
+
+a:hover {
+    color: #e36b4f;
+    /* color: #f9e0db; */
+}
+
+a:active {
+    color: #f9e0db;
+}
+
+h2 {
+    font-family: rafelya !important;
+    font-size: 55px !important;
+    width: 100%;
+    margin: 0;
+    /* text-align: center; */
+}
+ h3 {
+    font-family: rafelya !important;
+    font-size: 35px !important;
+ }
+
+main {
+    display: flex;
+    justify-content: space-around;
+    /* color: #f9e0db; */
+    color: #4e8712;
+    /* color: #4e8612; */
+    /* color: #253213; */
+    /* color: #5d821a; */
+}
+
+.row-reverse {
+    flex-direction: row-reverse !important;
+}
+
+.activity-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column; /* Puts title on top of <p> */
+    flex-wrap: wrap; /* doesn't seem to do anything? Why add it? Answer: In this case, could remove it because when flex-direction is "column", it doesn't change anything. However, it's good practice to keep it, to avoid having a child modified by a parent's properties*/
+    justify-content: center; /* doesn't seem to do anything? Why add it? Answer: same as above, better keep it */
+    align-items: flex-start ;/*don't want align-items...confused about why I should add it? */
+    /* background-color: violet; */
+    padding: 45px 80px;
+    /* background-color: #f9e0db; */
+    background-color: #874a57;
+    /* color: #253213; */
+    /* color: #874a57; */
+    color: #f9e0db;
+}
+
+.activity-type {
+    display: flex;
+    flex-direction: column; /* Why is this one doing nothing? Answer: again, parent business*/ 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f9e0db; */
+    background-color: bisque;
+}
+
+.img-activity {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    width: 50%;
+    /* mix-blend-mode: multiply; */
+}
+
+/* .pic-size {
+    width: 60%;
+    height: 60%;
+} */
+
+.sport, .art, .culture {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* seems to be aligning text in middle on top-bottom axis */
+    flex-direction: row;
+    width: 100%; /* To make sure, the div takes up the whole width of the page, no matter the size of the tab */
+    text-align: center; /*aligns all the small text boxes in the middle of their respective divs*/
+}
+
+.activity {
+    justify-content: center;
+    align-items: center; 
+    width: calc(50% - 100px); /* need to substract the value of the added padding so that it fits in the allocated width, otherwise it will push the elements onto the next line*/
+    padding: 0 50px;
+}
+
+.activity p, ul {
+    font-size: 20px;
+}
+
+.spectacles {
+    height: 95px;
+    overflow: auto;
+}
+
+.footer {
+    padding: 40px 50px;
+    text-align: right;
+    background-color: #874a57;
+    color: #f9e0db;
+}

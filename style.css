@@ -43,7 +43,7 @@ h1 {
 nav {
     display: flex;
     justify-content: right;
-    padding: 5% 0;
+    padding: 65px 65px 45px 0;
 }
 
 .nav {

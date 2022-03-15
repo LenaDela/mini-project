@@ -40,22 +40,82 @@ nav {
 
 .intro-header {
     display: flex;
-    height: 350px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch; 
-    text-align: center; 
-    margin: 0 0 90px 0; 
+    text-align: center;
+    margin-bottom: 50px; 
 }
 
 h1 {
     font-family: rafelya !important;
-    font-size: 55px !important;
+    font-size: 75px !important;
     margin-bottom: 0;
 }
 
-img {
-    width: 80px;
+/* .passion-img {
+    width: 80%;
+    max-width: 500px;
     height: auto;
+} */
+
+.check-icon {
+    color: #4e8712;
 }
+
+.x-icon {
+    color: red;
+}
+
+.circle-icon {
+    color: darkorange;
+}
+
+table {
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+    width: 80%;
+    margin: 20px 40px;
+    border: 1px solid;
+    border-radius: 13px; 
+    border-spacing: 0;
+}
+
+.team-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table-header {
+    text-align: left;
+}
+
+th, td {
+    padding: 20px;
+    border-bottom: 1px solid;
+    /* border-bottom: 1px solid DarkOrange;
+    padding: 10px; */
+  }
+
+th {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.text-center {
+    text-align: center;
+}
+
+th {
+    font-family: rafelya !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+}
+
+/* table, th, td {
+    border: 1px solid;
+} */

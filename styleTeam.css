@@ -16,15 +16,6 @@ header {
     text-align: center;
 }
 
-a {
-    text-decoration: none;
-    color: #253213;
-}
-
-a:hover {
-    color: #e36b4f;
-}
-
 nav {
     display: flex;
     flex-direction: row;
@@ -36,6 +27,15 @@ nav {
 
 .nav-elements {
     padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #253213;
+}
+
+a:hover {
+    color: #e36b4f;
 }
 
 .intro-header {
@@ -54,11 +54,32 @@ h1 {
     margin-bottom: 0;
 }
 
-/* .passion-img {
+.team-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
     width: 80%;
-    max-width: 500px;
-    height: auto;
-} */
+    margin: 20px 40px 40px 40px;
+    border: 1px solid; /*changes only the outside border, the frame*/
+    /* border-radius: 13px;  */
+    text-align: center;
+}
+
+.table-header {
+    text-align: center;
+}
+
+th {
+    font-weight: bolder;
+    font-size: larger;
+}
 
 .check-icon {
     color: #4e8712;
@@ -72,26 +93,8 @@ h1 {
     color: darkorange;
 }
 
-table {
-    table-layout: fixed;
-    /* border-collapse: collapse; */
-    width: 80%;
-    margin: 20px 40px;
-    border: 1px solid;
-    border-radius: 13px; 
-    border-spacing: 0;
-}
-
-.team-table {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.table-header {
-    text-align: left;
+.text-center {
+    text-align: center;
 }
 
 th, td {
@@ -100,15 +103,6 @@ th, td {
     /* border-bottom: 1px solid DarkOrange;
     padding: 10px; */
   }
-
-th {
-    font-weight: bolder;
-    font-size: larger;
-}
-
-.text-center {
-    text-align: center;
-}
 
 th {
     font-family: rafelya !important;

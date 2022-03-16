@@ -63,7 +63,7 @@ h1 {
     margin: 20px 40px 40px 40px;
     border-radius: 13px; 
     border: 0.5px solid;
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 table {
@@ -71,19 +71,16 @@ table {
     border-collapse: collapse;
     border-style: hidden;
     width: 100%;
-    /* border-radius: 13px;  */
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
     /* text-align: center; */
 }
 
 th {
     font-family: rafelya !important;
-    font-size: 15px !important;
+    font-size: 17px !important;
     font-weight: bold !important; /*why is this one not working?*/
     text-align: left;
 }
 
-/* Horizontal lines  */
 th, td {
     padding: 20px;
     border: 0.5px solid;
@@ -103,4 +100,11 @@ th, td {
 
 .text-center {
     text-align: center;
+}
+
+tfoot {
+    font-family: rafelya !important;
+    font-size: 20px !important;
+    text-align: center;
+    /* border: none; */
 }

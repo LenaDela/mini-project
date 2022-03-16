@@ -22,7 +22,7 @@ nav {
     flex-wrap: wrap;
     justify-content: right;
     align-items: center;
-    padding: 65px 65px 45px 0;
+    padding: 45px 65px 45px 0;
 }
 
 .nav-elements {
@@ -60,26 +60,34 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 20px 40px 40px 40px;
+    border-radius: 13px; 
+    border: 0.5px solid;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
 }
 
 table {
     table-layout: fixed;
     border-collapse: collapse;
-    width: 80%;
-    margin: 20px 40px 40px 40px;
-    border: 1px solid; /*changes only the outside border, the frame*/
+    border-style: hidden;
+    width: 100%;
     /* border-radius: 13px;  */
-    text-align: center;
-}
-
-.table-header {
-    text-align: center;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+    /* text-align: center; */
 }
 
 th {
-    font-weight: bolder;
-    font-size: larger;
+    font-family: rafelya !important;
+    font-size: 15px !important;
+    font-weight: bold !important; /*why is this one not working?*/
+    text-align: left;
 }
+
+/* Horizontal lines  */
+th, td {
+    padding: 20px;
+    border: 0.5px solid;
+  }
 
 .check-icon {
     color: #4e8712;
@@ -96,20 +104,3 @@ th {
 .text-center {
     text-align: center;
 }
-
-th, td {
-    padding: 20px;
-    border-bottom: 1px solid;
-    /* border-bottom: 1px solid DarkOrange;
-    padding: 10px; */
-  }
-
-th {
-    font-family: rafelya !important;
-    font-size: 15px !important;
-    font-weight: bold !important;
-}
-
-/* table, th, td {
-    border: 1px solid;
-} */

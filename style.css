@@ -1,0 +1,198 @@
+@font-face {
+    font-family: rafelya;
+    src: url(fonts/RafelyaCarrotin.ttf);
+}
+
+@font-face {
+    font-family: catthy;
+    src: url(fonts/CatthyWellingten.ttf);
+}
+
+@font-face {
+    font-family: scientist;
+    src: url(fonts/TheScientist.ttf);
+}
+
+.container {
+    background-color: #f4b910;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    font-size: larger;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+.padding-horizontal {
+    padding: 0 15%;
+}
+
+.intro-header {
+    color: #253213;
+    margin-bottom: 20%;
+}
+
+h1 {
+    margin-top: 0%;
+    font-family: rafelya !important;
+    font-size: 55px !important;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+    padding: 5% 0;
+}
+
+.nav {
+    color: #253213;
+}
+
+.passion-img {
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+}
+
+.hike {
+    mix-blend-mode: multiply;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.table-of-content {
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+.main-topic {
+    font-weight: bold;
+    font-family: rafelya !important;
+    font-size: 25px !important;
+    padding-bottom: 7px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0 8%;
+}
+
+.divided-content {
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #253213;
+}
+
+a:hover {
+    color: #e36b4f;
+}
+
+a:active {
+    color: #f9e0db;
+}
+
+h2 {
+    font-family: rafelya !important;
+    font-size: 55px !important;
+    width: 100%;
+    margin: 0;
+}
+
+ h3 {
+    font-family: rafelya !important;
+    font-size: 35px !important;
+ }
+
+main {
+    display: flex;
+    justify-content: space-around;
+    color: #4e8712;
+}
+
+.row-reverse {
+    flex-direction: row-reverse !important;
+}
+
+.activity-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start ;
+    padding: 45px 80px;
+    background-color: #874a57;
+    color: #f9e0db;
+}
+
+.activity-type {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.img-activity {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    width: 50%;
+}
+
+.sport, .art, .culture {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    text-align: center; 
+}
+
+.activity {
+    justify-content: center;
+    align-items: center; 
+    width: calc(50% - 100px);
+    padding: 0 50px;
+}
+
+.activity p, ul {
+    font-size: 20px;
+}
+
+.spectacles {
+    height: 95px;
+    overflow: auto;
+}
+
+.footer {
+    padding: 40px 50px;
+    text-align: right;
+    background-color: #874a57;
+    color: #f9e0db;
+}

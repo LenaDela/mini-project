@@ -121,3 +121,12 @@ tfoot {
 .margin-right {
     margin-right: 20px;
 }
+
+.footer {
+    padding: 40px 50px;
+    text-align: right;
+}
+
+tfoot > tr > td {
+    border: none;
+}

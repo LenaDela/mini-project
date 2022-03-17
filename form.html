@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Formulaire de contact, si vous voulez joindre Lena's ZOL pour toute question ou commentaire."
+    />
+    <link rel="stylesheet" href="styleForm.css" />
+    <title>Formulaire de contact</title>
+  </head>
+  <body class="container-home">
+    <header>
+      <nav>
+        <div class="nav-elements">
+          <a href="mini.html" title="Revenir à l'accueil">HOME</a>
+        </div>
+        <div class="nav-elements">
+          <a href="passions.html" title="Voir le fruit de la passion"
+            >PASSIONS</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main class="content">
+      <section class="intro-section">
+        <div class="intro-header">
+          <h1>Contact</h1>
+        </div>
+      </section>
+      <section class="form">
+        <form method="POST" action="iDoNotExist.php">
+          <div class="left-side">
+            <div class="aligning user">
+              <label for="lastname">Nom</label>
+              <input type="text" id="lastname" name="lastname" placeholder="Dela" required>
+              <br>
+              <label for="firstname">Prénom</label>
+              <input type="text" id="firstname" name="firstname" placeholder="Lena" required>
+              <br>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="lena@dela.com" required>
+            </div>
+            <div class="aligning date">
+              <label for="date">Date de naissance</label>
+              <input type="date" id="date" name="date-of-birth" required>
+            </div>
+            <div class="aligning color">
+              <label for="color">Couleur préférée</label>
+              <input type="color" id="color" name="color">
+            </div>
+            <div class="aligning gender">
+              <fieldset>
+                <legend>À quel genre vous identifiez-vous?</legend>
+                <label for="option-1" class="radio-button">
+                  <input type="radio" name="gender" value="female" id="option-1"> 
+                  Féminin
+                  <span></span>
+                </label> 
+                <br>
+                <label for="option-2" class="radio-button">
+                  <input type="radio" name="gender" value="male" id="option-2">
+                  Masculin
+                  <span></span>
+                </label>
+                <br> 
+                <label for="option-3" class="radio-button">
+                  <input type="radio" name="gender" value="other" id="option-3">
+                  Autre
+                  <span></span>
+                </label>
+                <br>
+                <label for="option-4" class="radio-button">
+                  <input type="radio" name="gender" value="wouldRatherNotSay" id="option-4">
+                  Préfère ne pas spécifier
+                  <span></span>
+                </label>
+              </fieldset>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="aligning comment">
+              <label for="comments">Vos questions et commentaires</label> 
+              <br>
+              <textarea name="comments" id="comments" cols="1" rows="10" placeholder="Écrivez ici..." required></textarea>
+            </div>
+            <div class="aligning agree">
+              <input type="checkbox" name="agreement" value="mustAgree" id="agreement" required>
+              <label for="agreement">J'ai conscience que ce formulaire n'est qu'un test et que mes réponses ne seront jamais lues par personne.</label>
+            </div>
+            <div class="aligning send">
+              <input type="submit" value="Envoyer">
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">Made with passion in Lyon ©</div>
+    </footer>
+  </body>
+</html>

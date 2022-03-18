@@ -33,45 +33,60 @@
         <form method="POST" action="iDoNotExist.php">
           <div class="left-side">
             <div class="aligning user">
-              <label for="lastname">Nom</label>
-              <input type="text" id="lastname" name="lastname" placeholder="Dela" required>
-              <br>
-              <label for="firstname">Prénom</label>
-              <input type="text" id="firstname" name="firstname" placeholder="Lena" required>
-              <br>
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="lena@dela.com" required>
+              <div class="spread">
+                <label class="space-between" for="lastname">Nom</label>
+                <div class="relative">
+                  <div class="opacity"></div>
+                    <input class="space-between" type="text" id="lastname" name="lastname" placeholder="Dela" required>
+                </div>
+              </div>
+              <div class="relative">
+                  <div class="opacity"></div>
+                <div class="spread">
+                  <label class="space-between" for="firstname">Prénom</label>
+                  <input class="space-between" type="text" id="firstname" name="firstname" placeholder="Lena" required>
+                </div>
+              </div>
+              <div class="relative">
+                  <div class="opacity"></div>
+                <div class="spread">
+                  <label class="space-between" for="email">Email</label>
+                  <input class="space-between" type="email" id="email" name="email" placeholder="lena@dela.com" required>
+                </div>
+              </div>
             </div>
-            <div class="aligning date">
-              <label for="date">Date de naissance</label>
-              <input type="date" id="date" name="date-of-birth" required>
-            </div>
-            <div class="aligning color">
-              <label for="color">Couleur préférée</label>
-              <input type="color" id="color" name="color">
-            </div>
+            <div class="side-by-side">
+              <div class="aligning date">
+                <label class="space-between date-input" for="date">Date de naissance</label>
+                <input class="space-between date-input" type="date" id="date" name="date-of-birth" required>
+              </div>
+              <div class="aligning color">
+                <label class="space-between date-input" for="color">Couleur préférée</label>
+                <input class="space-between" value="#874a57" type="color" id="color" name="color">
+              </div>
+          </div>
             <div class="aligning gender">
               <fieldset>
                 <legend>À quel genre vous identifiez-vous?</legend>
-                <label for="option-1" class="radio-button">
+                <label class="space-between" for="option-1" class="radio-button">
                   <input type="radio" name="gender" value="female" id="option-1"> 
                   Féminin
                   <span></span>
                 </label> 
                 <br>
-                <label for="option-2" class="radio-button">
+                <label class="space-between" for="option-2" class="radio-button">
                   <input type="radio" name="gender" value="male" id="option-2">
                   Masculin
                   <span></span>
                 </label>
                 <br> 
-                <label for="option-3" class="radio-button">
+                <label class="space-between" for="option-3" class="radio-button">
                   <input type="radio" name="gender" value="other" id="option-3">
                   Autre
                   <span></span>
                 </label>
                 <br>
-                <label for="option-4" class="radio-button">
+                <label class="space-between" for="option-4" class="radio-button">
                   <input type="radio" name="gender" value="wouldRatherNotSay" id="option-4">
                   Préfère ne pas spécifier
                   <span></span>
@@ -81,16 +96,18 @@
           </div>
           <div class="right-side">
             <div class="aligning comment">
-              <label for="comments">Vos questions et commentaires</label> 
-              <br>
-              <textarea name="comments" id="comments" cols="1" rows="10" placeholder="Écrivez ici..." required></textarea>
+              <label class="space-between" for="comments">Vos questions et commentaires</label> 
+              <div class="relative">
+                <div class="opacity"></div>
+                <textarea class="space-between" name="comments" id="comments" cols="1" rows="10" placeholder="Écrivez ici..." required></textarea>
+              </div>
             </div>
             <div class="aligning agree">
-              <input type="checkbox" name="agreement" value="mustAgree" id="agreement" required>
-              <label for="agreement">J'ai conscience que ce formulaire n'est qu'un test et que mes réponses ne seront jamais lues par personne.</label>
+              <input class="space-between checkbox" type="checkbox" name="agreement" value="mustAgree" id="agreement" required>
+              <label class="space-between" for="agreement">J'ai conscience que ce formulaire n'est qu'un test et que mes réponses ne seront jamais lues par personne.</label>
             </div>
             <div class="aligning send">
-              <input type="submit" value="Envoyer">
+              <input class="space-between" type="submit" value="Envoyer">
             </div>
           </div>
         </form>

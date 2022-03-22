@@ -4,16 +4,14 @@
 }
 
 .container-home {
-    background-color: #f4b910;
+    /* background-color: #f4b910; */
+    /* background-color: #874a57; */
+    background-color: bisque;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 300;
     font-size: 21px;
     margin: 0;
     color: #253213;
-}
-
-header {
-    text-align: center;
 }
 
 nav {
@@ -39,13 +37,8 @@ a:hover {
 }
 
 .intro-header {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch; 
     text-align: center;
-    margin-bottom: 50px; 
+    margin-bottom: 30px; 
 }
 
 h1 {
@@ -67,6 +60,8 @@ form {
     border-radius: 13px; 
     border: 0.5px solid;
     border-color: #874a57;
+    background-color: #f4b910;
+    /* background-color: bisque; */
     /* border-color: #f9e0db; */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     color: #874a57;
@@ -74,41 +69,47 @@ form {
     height: auto;
     padding: 20px;
     /* color: #f9e0db; */
-}
+    /* background-color: #f4b910; */
+    /* background-color: bisque; */
 
-.left-side, .right-side {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    /* background-color: #e36b4f; */
 }
 
 .aligning {
     /* background-color: aqua; */
-    margin: 10px;
+    margin: 10px; 
 }
 
-input, textarea {
+.input-styling, .textarea-styling {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
     font-size: 21px;
     font-weight: lighter;
     letter-spacing: 2px;
-    border-radius: 10px;
-    border: 0.5px solid;
+    color: #874a57;
     border-color: #874a57;
-    /* color: #f9e0db; */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    /* outline-color: #874a57; */
-    outline: none;
     background-color: transparent;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: 0.5px solid;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
 }
 
-.space-between {
+.input-styling:checked {
+    background-color: #874a57;
+}
+
+.added-padding-width {
     padding: 5px 10px;
     width: 350px;
+}
+
+.spread {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* background-color: olive; */
 }
 
 .user {
@@ -120,51 +121,46 @@ input, textarea {
     align-items: center;
 }
 
-.spread {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.relative {
+    width: 371px;
+    height: 100%;
+    position: relative;
+    margin: 5px;
+    /* background-color: #e36b4f; */
 }
 
-.spread > input {
+.opacity {
+    position: absolute;
+    opacity: 0.2;
+    background-color: white;
     width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* z-index: 0; */
+    pointer-events: none;
+    /* background-color: blue; */
 }
 
-/* .user .space-between {
-    display: flex;
-    flex-direction: column;
-} */
-
-.side-by-side {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 20px 0;
-}
-
-.date-input {
-    width: 200px;
-}
-
-.date {
-    /* background-color: yellowgreen; */
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 20px;
-}
-
-.color {
+.date, .color {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* background-color: pink; */
+    margin-top: 40px;
+    text-align: center;
+    /* background-color: red; */
+}
+
+input[type="date"] {
+    color: #874a57;
+    width: 60%;
+    margin-top: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: transparent;
+    cursor: pointer;
 }
 
 #color {
@@ -176,7 +172,7 @@ input, textarea {
     height: 40px;
     border: none !important;
     padding: 0 !important;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 #color::-webkit-color-swatch {
@@ -191,64 +187,73 @@ input, textarea {
 
 fieldset {
     border: 0.5px solid;
-    border-radius: 13px;
+    border-radius: 10px;
     border-color: #874a57;
     padding: 20px;
+    margin-top: 20px;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    margin: 0 10px;
+    font: inherit;
+    color: currentColor;
+    width: 15px;
+    height: 15px;
+    border: 0.1 solid currentColor;
+    border-radius: 50%;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    margin: 0 10px;
+    font: inherit;
+    color: currentColor;
+    width: 15px;
+    height: 15px;
+    border: 0.1 solid currentColor;
+    border-radius: 2px;
+}
+
+textarea {
+    background-color: transparent;
+    /* z-index: 1; */
+}
+
+.textarea-space-size {
+    width: calc( 100% - 80px );
+    height: calc( 100% - 80px );
+    padding: 40px 40px;
+}
+
+.relative-textarea {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 5px;
 }
 
 .comment {
-    width: calc( 100% - 20px );
     display: flex;
     flex: column;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    /* background-color: yellowgreen; */
+    margin-top: 40px;
+    text-align: center;
+    /* background-color: yellowgreen; */ 
 }
 
-textarea {
-    width: 80%;
-    background-color: transparent;
-    z-index: 1;
-}
-
-.relative {
-    width: 371px;
-    height: 100%;
-    position: relative;
-    margin: 5px;
-}
-
-.opacity {
-    position: absolute;
-    opacity: 0.2;
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 13px;
-    z-index: 0;
-}
-
-.agree {
+.agree, .send {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    width: 80%;
-}
-
-.checkbox {
-    
-}
-
-.send {
-    /* background-color: yellowgreen; */
-    /*not good, I want it to be aligned with the textarea box*/
-    /* margin-right: 40px;  */
-    /* align-self: flex-end; bof....pas aussi loin */
-    
 }
 
 input[type="submit" i] {

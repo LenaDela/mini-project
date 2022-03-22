@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="Formulaire de contact, si vous voulez joindre Lena's ZOL pour toute question ou commentaire."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formulaire de contact, si vous voulez joindre Lena's ZOL pour toute question ou commentaire."/>
     <link rel="stylesheet" href="styleForm.css" />
     <title>Formulaire de contact</title>
   </head>
@@ -17,9 +15,10 @@
           <a href="mini.html" title="Revenir à l'accueil">HOME</a>
         </div>
         <div class="nav-elements">
-          <a href="passions.html" title="Voir le fruit de la passion"
-            >PASSIONS</a
-          >
+          <a href="passions.html" title="Voir le fruit de la passion">PASSIONS</a>
+        </div>
+        <div class="nav-elements">
+          <a href="team.html" title="Découvrir l'équipe">TEAM</a>
         </div>
       </nav>
     </header>
@@ -31,85 +30,78 @@
       </section>
       <section class="form">
         <form method="POST" action="iDoNotExist.php">
-          <div class="left-side">
             <div class="aligning user">
               <div class="spread">
-                <label class="space-between" for="lastname">Nom</label>
+                <label class="added-padding-width" for="lastname">Nom</label>
                 <div class="relative">
                   <div class="opacity"></div>
-                    <input class="space-between" type="text" id="lastname" name="lastname" placeholder="Dela" required>
+                    <input class="added-padding-width input-styling" type="text" id="lastname" name="lastname" placeholder="Dela" required>
                 </div>
               </div>
-              <div class="relative">
-                  <div class="opacity"></div>
-                <div class="spread">
-                  <label class="space-between" for="firstname">Prénom</label>
-                  <input class="space-between" type="text" id="firstname" name="firstname" placeholder="Lena" required>
-                </div>
+              <div class="spread">
+                  <label class="added-padding-width" for="firstname">Prénom</label>
+                  <div class="relative">
+                    <div class="opacity"></div>
+                    <input class="added-padding-width input-styling" type="text" id="firstname" name="firstname" placeholder="Lena" required>
+                  </div>
               </div>
-              <div class="relative">
-                  <div class="opacity"></div>
-                <div class="spread">
-                  <label class="space-between" for="email">Email</label>
-                  <input class="space-between" type="email" id="email" name="email" placeholder="lena@dela.com" required>
-                </div>
+              <div class="spread">
+                  <label class="added-padding-width" for="email">Email</label>
+                  <div class="relative">
+                    <div class="opacity"></div>
+                    <input class="added-padding-width input-styling" type="email" id="email" name="email" placeholder="lena@dela.com" required>
+                  </div>
               </div>
-            </div>
-            <div class="side-by-side">
-              <div class="aligning date">
-                <label class="space-between date-input" for="date">Date de naissance</label>
-                <input class="space-between date-input" type="date" id="date" name="date-of-birth" required>
+              <div class="date spread">
+                <label class="added-padding-width" for="date">Date de naissance</label>
+                <input class="added-padding-width input-styling" type="date" id="date" name="date-of-birth" required>
               </div>
               <div class="aligning color">
-                <label class="space-between date-input" for="color">Couleur préférée</label>
-                <input class="space-between" value="#874a57" type="color" id="color" name="color">
+                <label class="added-padding-width" for="color">Couleur préférée</label>
+                <input class="added-padding-width" value="#874a57" type="color" id="color" name="color">
               </div>
-          </div>
-            <div class="aligning gender">
               <fieldset>
                 <legend>À quel genre vous identifiez-vous?</legend>
-                <label class="space-between" for="option-1" class="radio-button">
-                  <input type="radio" name="gender" value="female" id="option-1"> 
+                <label class="added-padding-width" for="option-1" class="radio-button">
+                  <input class="input-styling" type="radio" name="gender" value="female" id="option-1"> 
                   Féminin
                   <span></span>
                 </label> 
                 <br>
-                <label class="space-between" for="option-2" class="radio-button">
-                  <input type="radio" name="gender" value="male" id="option-2">
+                <label class="added-padding-width" for="option-2" class="radio-button">
+                  <input class="input-styling" type="radio" name="gender" value="male" id="option-2">
                   Masculin
                   <span></span>
                 </label>
                 <br> 
-                <label class="space-between" for="option-3" class="radio-button">
-                  <input type="radio" name="gender" value="other" id="option-3">
+                <label class="added-padding-width" for="option-3" class="radio-button">
+                  <input class="input-styling" type="radio" name="gender" value="other" id="option-3">
                   Autre
                   <span></span>
                 </label>
                 <br>
-                <label class="space-between" for="option-4" class="radio-button">
-                  <input type="radio" name="gender" value="wouldRatherNotSay" id="option-4">
+                <label class="added-padding-width" for="option-4" class="radio-button">
+                  <input class="input-styling" type="radio" name="gender" value="wouldRatherNotSay" id="option-4">
                   Préfère ne pas spécifier
                   <span></span>
                 </label>
               </fieldset>
+            </div>           
             </div>
-          </div>
-          <div class="right-side">
             <div class="aligning comment">
-              <label class="space-between" for="comments">Vos questions et commentaires</label> 
-              <div class="relative">
+              <label class="added-padding-width" for="comments">Vos questions et commentaires</label> 
+              <div class="relative-textarea">
                 <div class="opacity"></div>
-                <textarea class="space-between" name="comments" id="comments" cols="1" rows="10" placeholder="Écrivez ici..." required></textarea>
+                <textarea class="textarea-space-size textarea-styling" name="comments" id="comments" cols="1" rows="10" placeholder="Écrivez ici..." maxlength="1200" required></textarea>
               </div>
             </div>
             <div class="aligning agree">
-              <input class="space-between checkbox" type="checkbox" name="agreement" value="mustAgree" id="agreement" required>
-              <label class="space-between" for="agreement">J'ai conscience que ce formulaire n'est qu'un test et que mes réponses ne seront jamais lues par personne.</label>
+              <input class="checkbox input-styling" type="checkbox" name="agreement" value="mustAgree" id="agreement" required>
+              <label class="added-padding-width" for="agreement">J'ai conscience que ce formulaire n'est qu'un test et que mes réponses ne seront jamais lues par personne.</label>
             </div>
             <div class="aligning send">
-              <input class="space-between" type="submit" value="Envoyer">
+              <input class="input-styling" type="submit" value="Envoyer">
             </div>
-          </div>
         </form>
       </section>
     </main>

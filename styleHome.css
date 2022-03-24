@@ -61,7 +61,7 @@ h1 {
     margin-bottom: 0;
 }
 
-.secret {
+.hover-message {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

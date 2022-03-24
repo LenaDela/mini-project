@@ -16,6 +16,19 @@ header {
     text-align: center;
 }
 
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: center;
+    padding: 45px 65px 45px 0;
+}
+
+.nav-elements {
+    padding: 0 15px;
+}
+
 a {
     text-decoration: none;
     color: #253213;
@@ -25,37 +38,95 @@ a:hover {
     color: #e36b4f;
 }
 
-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: right;
-    align-items: center;
-    padding: 65px 65px 45px 0;
-}
-
-.nav-elements {
-    padding: 0 15px;
-}
-
 .intro-header {
     display: flex;
-    height: 350px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch; 
-    text-align: center; 
-    margin: 0 0 90px 0; 
+    text-align: center;
+    margin-bottom: 50px; 
 }
 
 h1 {
     font-family: rafelya !important;
-    font-size: 55px !important;
+    font-size: 75px !important;
     margin-bottom: 0;
 }
 
-img {
-    width: 80px;
-    height: auto;
+.team-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 40px 40px 40px;
+    border-radius: 13px; 
+    border: 0.5px solid;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-style: hidden;
+    width: 100%;
+    /* text-align: center; */
+}
+
+th {
+    font-family: rafelya !important;
+    font-size: 17px !important;
+    font-weight: bold !important; /*why is this one not working?*/
+    text-align: left;
+}
+
+th, td {
+    padding: 20px;
+    border: 0.5px solid;
+  }
+
+.check-icon {
+    color: #4e8712;
+}
+
+.x-icon {
+    color: red;
+}
+
+.circle-icon {
+    color: darkorange;
+}
+
+.text-center {
+    text-align: center;
+}
+
+tfoot {
+    font-family: rafelya !important;
+    font-size: 20px !important;
+    text-align: center;
+    /* border: none; */
+}
+
+.flex-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.margin-right {
+    margin-right: 20px;
+}
+
+.footer {
+    padding: 40px 50px;
+    text-align: right;
+}
+
+tfoot > tr > td {
+    border: none;
 }

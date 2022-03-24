@@ -47,7 +47,7 @@ h1 {
     margin-bottom: 0;
 }
 
-.form {
+.form, .audio {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -217,6 +217,15 @@ input[type="checkbox"] {
     height: 15px;
     border: 0.1 solid currentColor;
     border-radius: 2px;
+}
+
+.audio {
+    margin-top: 30px;
+}
+
+audio::-webkit-media-controls-panel {
+background-color: #874a57;
+color: #fff;
 }
 
 textarea {

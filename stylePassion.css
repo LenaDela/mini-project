@@ -209,3 +209,11 @@ main {
     background-color: #874a57;
     color: #f9e0db;
 }
+
+@media (min-width: 1201px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}

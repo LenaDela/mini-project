@@ -4,8 +4,6 @@
 }
 
 .container-home {
-    /* background-color: #f4b910; */
-    /* background-color: #874a57; */
     background-color: bisque;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 300;
@@ -61,21 +59,14 @@ form {
     border: 0.5px solid;
     border-color: #874a57;
     background-color: #f4b910;
-    /* background-color: bisque; */
-    /* border-color: #f9e0db; */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     color: #874a57;
     width: 50%;
     height: auto;
     padding: 20px;
-    /* color: #f9e0db; */
-    /* background-color: #f4b910; */
-    /* background-color: bisque; */
-
 }
 
 .aligning {
-    /* background-color: aqua; */
     margin: 10px; 
 }
 
@@ -109,11 +100,9 @@ form {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* background-color: olive; */
 }
 
 .user {
-    /* background-color: pink; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -126,7 +115,6 @@ form {
     height: 100%;
     position: relative;
     margin: 5px;
-    /* background-color: #e36b4f; */
 }
 
 .opacity {
@@ -136,9 +124,7 @@ form {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    /* z-index: 0; */
     pointer-events: none;
-    /* background-color: blue; */
 }
 
 .date, .color {
@@ -149,7 +135,6 @@ form {
     align-items: center;
     margin-top: 40px;
     text-align: center;
-    /* background-color: red; */
 }
 
 input[type="date"] {
@@ -230,7 +215,6 @@ color: #fff;
 
 textarea {
     background-color: transparent;
-    /* z-index: 1; */
 }
 
 .textarea-space-size {
@@ -254,7 +238,6 @@ textarea {
     align-items: center;
     margin-top: 40px;
     text-align: center;
-    /* background-color: yellowgreen; */ 
 }
 
 .agree, .send {

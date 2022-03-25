@@ -96,7 +96,7 @@ img {
 
 h2 {
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: 40px;
     font-family: rafelya !important;
 }
 
@@ -239,21 +239,109 @@ ol li {
     background-color: antiquewhite;
 }
 
-/* @media (min-width: 1817px) {
-
+@media (min-width: 1817px) {
+    .intro-header>div {
+        margin: 0 90px;
+    }
+    .intro-header{
+        flex-direction: column;
+        align-items: center;
+    }
+    .intro h1{
+        font-size: 90px;
+        padding-bottom: 40px;
+    }
+    .intro p, .hover-message>a {
+        font-size: 25px;
+        margin: 10px;
+    }
+    .hover-message {
+        padding-top: 50px;
+    }
+    .hover-message>img {
+        width: 600px;
+    }
+    h2 {
+        font-size: 50px;
+    }
+    .bio-text>p {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 60px;
+    }
+    ul, ol {
+        font-size: 25px;
+    }
 }
 
 @media (min-width: 1440px) and (max-width: 1816px) {
-
-} */
+    .intro-header>div {
+        margin: 0 90px;
+    }
+    .intro-header{
+        flex-direction: column;
+        align-items: center;
+    }
+    .intro h1{
+        font-size: 60px;
+        padding-bottom: 30px;
+    }
+    .intro p, .hover-message>a {
+        font-size: 25px;
+        margin: 10px;
+    }
+    h2 {
+        font-size: 50px;
+    }
+    .bio-text>p {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 50px;
+    }
+    ul, ol {
+        font-size: 22px;
+    }
+}
 
 @media (min-width: 1037px) and (max-width: 1439px) {
- 
+    .intro-header>div {
+        margin: 0 90px;
+    }
+    .line, ul {
+        flex-direction: column;
+    }
+    ul, ol {
+        font-size: 20px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1036px) {
     nav {
         justify-content: center;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    .line, ul {
+        flex-direction: column;
+    }
+    ul, ol {
+        font-size: 20px;
+    }
+    h3 {
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .best-impressions>h3{
+        justify-content: flex-start;
+    }
+    .best-impressions {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 35px 35px;
     }
 }
 
@@ -280,7 +368,11 @@ ol li {
         padding-top: 50px;
     }
     h3 {
-        font-size: 35px;
+        font-size: 30px;
+        justify-content: flex-start;
+    }
+    .line, ul {
+        flex-direction: column;
     }
     .first-impressions>ul {
         font-size: 18px;
@@ -294,7 +386,7 @@ ol li {
     }
 }
 
-@media (min-width: 375px) and (max-width: 424px) {
+@media (min-width: 377px) and (max-width: 424px) {
     nav {
         justify-content: center;
         flex-direction: column;
@@ -306,6 +398,7 @@ ol li {
     .intro h1{
         font-size: 40px;
         padding-bottom: 50px;
+        width: 40%;
     }
     .intro p, .hover-message>a {
         font-size: 18px;
@@ -317,37 +410,86 @@ ol li {
     .hover-message>img {
         width: 300px;
     }
+    h2 {
+        font-size: 30px;
+    }
     figcaption {
-        font-size: 25px;
+        font-size: 20px;
     }
     figure>img {
         width: 100%;
         padding-top: 50px;
     }
     h3 {
-        font-size: 30px;
+        font-size: 25px;
     }
     .first-impressions>ul {
         font-size: 15px;
         height: 100%;
     }
     .best-impressions {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 35px 35px;
-    }
-    .best-impressions {
-        flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         padding: 25px 25px;
-        font-size: 18px;
-    } 
+        font-size: 15px;
+    }
+    .footer {
+        font-size: 15px;
+        text-align: center;
+    }  
 }
 
-@media (min-width: 320px) and (max-width: 374px) {
+@media (min-width: 320px) and (max-width: 376px) {
     nav {
         justify-content: center;
     }
+    .nav-elements{
+        font-size: 15px;
+        margin: 3px;
+    }
+    .intro h1{
+        font-size: 40px;
+        padding-bottom: 50px;
+        width: 40%;
+    }
+    .intro p, .hover-message>a {
+        font-size: 18px;
+        margin: 5px;
+    }
+    .hover-message {
+        padding-top: 50px;
+    }
+    .hover-message>img {
+        width: 300px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    figcaption {
+        font-size: 20px;
+    }
+    figure>img {
+        width: 100%;
+        padding-top: 50px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    .first-impressions>ul {
+        font-size: 15px;
+        height: 100%;
+    }
+    ul {
+       padding: 0; 
+    } 
+    .best-impressions {
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 25px 25px;
+        font-size: 13px;
+    }
+    .footer {
+        font-size: 15px;
+        text-align: center;
+    } 
 }

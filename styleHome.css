@@ -16,14 +16,27 @@
 .container-home {
     background-color: #f4b910;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: lighter;
-    font-size: larger;
+    font-weight: 300;
+    font-size: 21px;
     margin: 0;
     color: #253213;
 }
 
 header {
     text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: center;
+    padding: 45px 65px 45px 0;
+}
+
+.nav-elements {
+   margin: 0 15px;
 }
 
 a {
@@ -33,15 +46,6 @@ a {
 
 a:hover {
     color: #e36b4f;
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: right;
-    align-items: center;
-    padding: 65px 65px 45px 0;
 }
 
 .intro-header {
@@ -98,7 +102,7 @@ h2 {
 }
 
 .middle {
-    width: 70%;
+    width: 90%;
 }
 
 .bio {

@@ -6,8 +6,8 @@
 .container-home {
     background-color: #f4b910;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: lighter;
-    font-size: larger;
+    font-weight: 300;
+    font-size: 21px;
     margin: 0;
     color: #253213;
 }
@@ -71,13 +71,11 @@ table {
     border-collapse: collapse;
     border-style: hidden;
     width: 100%;
-    /* text-align: center; */
 }
 
 th {
     font-family: rafelya !important;
     font-size: 17px !important;
-    font-weight: bold !important; /*why is this one not working?*/
     text-align: left;
 }
 
@@ -106,7 +104,6 @@ tfoot {
     font-family: rafelya !important;
     font-size: 20px !important;
     text-align: center;
-    /* border: none; */
 }
 
 .flex-center {

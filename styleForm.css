@@ -1,0 +1,262 @@
+@font-face {
+    font-family: rafelya;
+    src: url(fonts/RafelyaCarrotin.ttf);
+}
+
+.container-home {
+    background-color: bisque;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+    font-size: 21px;
+    margin: 0;
+    color: #253213;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: center;
+    padding: 45px 65px 45px 0;
+}
+
+.nav-elements {
+   margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #253213;
+}
+
+a:hover {
+    color: #e36b4f;
+}
+
+.intro-header {
+    text-align: center;
+    margin-bottom: 30px; 
+}
+
+h1 {
+    font-family: rafelya !important;
+    font-size: 75px !important;
+    margin-bottom: 0;
+}
+
+.form, .audio {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin: 20px 40px 40px 40px;
+    border-radius: 13px; 
+    border: 0.5px solid;
+    border-color: #874a57;
+    background-color: #f4b910;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    color: #874a57;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+}
+
+.aligning {
+    margin: 10px; 
+}
+
+.input-styling, .textarea-styling {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    font-size: 21px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    color: #874a57;
+    border-color: #874a57;
+    background-color: transparent;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: 0.5px solid;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+}
+
+.input-styling:checked {
+    background-color: #874a57;
+}
+
+.added-padding-width {
+    padding: 5px 10px;
+    width: 350px;
+}
+
+.spread {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.relative {
+    width: 371px;
+    height: 100%;
+    position: relative;
+    margin: 5px;
+}
+
+.opacity {
+    position: absolute;
+    opacity: 0.2;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.date, .color {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
+input[type="date"] {
+    color: #874a57;
+    width: 60%;
+    margin-top: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#color {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+}
+
+#color::-webkit-color-swatch {
+    border-radius: 5px !important;
+    border: 0.5px solid black;
+}
+
+#color::-moz-color-swatch {
+    border-radius: 5px !important;
+    border: 0.5px solid black;
+}
+
+fieldset {
+    border: 0.5px solid;
+    border-radius: 10px;
+    border-color: #874a57;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    margin: 0 10px;
+    font: inherit;
+    color: currentColor;
+    width: 15px;
+    height: 15px;
+    border: 0.1 solid currentColor;
+    border-radius: 50%;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    margin: 0 10px;
+    font: inherit;
+    color: currentColor;
+    width: 15px;
+    height: 15px;
+    border: 0.1 solid currentColor;
+    border-radius: 2px;
+}
+
+.audio {
+    margin-top: 30px;
+}
+
+audio::-webkit-media-controls-panel {
+background-color: #874a57;
+color: #fff;
+}
+
+textarea {
+    background-color: transparent;
+}
+
+.textarea-space-size {
+    width: calc( 100% - 80px );
+    height: calc( 100% - 80px );
+    padding: 40px 40px;
+}
+
+.relative-textarea {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 5px;
+}
+
+.comment {
+    display: flex;
+    flex: column;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.agree, .send {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="submit" i] {
+    background-color: #874a57;
+    color: #f9e0db;
+    padding: 12px 30px;
+}
+
+.footer {
+    padding: 40px 50px;
+    text-align: right;
+    background-color: #874a57;
+    color: #f9e0db;
+}

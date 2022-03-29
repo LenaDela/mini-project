@@ -101,7 +101,7 @@ td {
     color: darkorange;
 }
 
-.text-center {
+.text-center, .text-footer-center {
     text-align: center;
 }
 
@@ -134,10 +134,9 @@ tfoot>tr>td {
 }
   
 @media (min-width: 768px) and (max-width: 1036px) {
-    th {
+    /* th {
         font-size: 15px;
-    }
-
+    } */
 }
 
 @media (max-width: 970px) {
@@ -145,25 +144,66 @@ tfoot>tr>td {
         justify-content: center;
         padding: 45px 0;
     }
-    /* .colleague {
-        display: flex;
-        align-items: flex-end;
-    }
-    .persons-details {
-        flex-direction: column;
-    }
-    table, thead, tbody, th, td, tr { 
-		display: block; 
-	} */
     .table thead {
         display: none;
     }
-    .table, .table tbody, .table tr, .table td {
+    table, td, tr {
         display: block;
-        /* width: 100%; */
+    }
+    .team-table {
+        border: none;
+        box-shadow: none;
+    }
+    .colleague {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .firstname, .lastname, .role {
+        width: calc( 80% - 41px );
+        border-right: 0.5px;
+    }
+    .lastname{
+        border-top-left-radius: 13px;
+        border-bottom: 0.5px;
+        font-weight: 400;
+    }
+    .role{
+        border-bottom-left-radius: 13px;
+        border-top: 0.5px;
+        font-style: italic;
+    }
+    .text-center {
+        position: absolute;
+        width: calc( 20% - 41px );
+        /* height: calc( 196px - 42px ); */
+        height: calc( 100% - 42px );
+        top: 0;
+        right: 0;
+        border-top-right-radius: 13px;
+        border-bottom-right-radius: 13px;
+        display: flex !important;
+        justify-content: center;
+    }
+    .fa-solid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .legend {
+        position: relative;
+        display: flex;
+        width: 100%;
     }
 }
 
+@media (max-width: 500px) {
+    nav {
+        font-size: 18px;
+    }
+    tr {
+       font-size: 12px; 
+    }
+}
 /* @media (min-width: 425px) and (max-width: 767px) {
 } */
 

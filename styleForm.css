@@ -41,7 +41,7 @@ a:hover {
 
 h1 {
     font-family: rafelya !important;
-    font-size: 75px !important;
+    font-size: 75px;
     margin-bottom: 0;
 }
 
@@ -90,6 +90,11 @@ form {
 }
 
 .added-padding-width {
+    padding: 5px 10px;
+    width: 350px;
+}
+
+.fixed-size {
     padding: 5px 10px;
     width: 350px;
 }
@@ -259,4 +264,65 @@ input[type="submit" i] {
     text-align: right;
     background-color: #874a57;
     color: #f9e0db;
+}
+
+@media (min-width: 1817px) {
+    .container-home {
+        font-size: 25px;
+    }
+    h1 {
+        font-size: 80px;
+    }
+    audio {
+        width: 500px;
+        margin-top: 10px;
+    }
+    .user {
+        flex-direction: column;
+    }
+    .added-padding-width {
+        width: 600px;
+    }
+    .relative {
+        width: 622px;
+    }
+    .fixed-size {
+        width: 100px;
+    }
+    .spread {
+        justify-content: center;
+    }
+    .relative-textarea {
+        margin-top: 20px;
+        width: 800px;
+        height: 600px;
+    }
+    fieldset {
+        width: 450px;
+    }
+    #color {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1816px) {
+    
+}
+
+@media (min-width: 1037px) and (max-width: 1439px) {
+  
+}
+
+@media (min-width: 768px) and (max-width: 1036px) {
+  
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    
+}
+
+/* @media (min-width: 377px) and (max-width: 424px) { */
+@media (min-width: 320px) and (max-width: 424px) {
+    
 }

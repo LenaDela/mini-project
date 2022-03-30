@@ -67,7 +67,7 @@ form {
 }
 
 .aligning {
-    margin: 10px; 
+    margin: 20px; 
 }
 
 .input-styling, .textarea-styling {
@@ -267,62 +267,433 @@ input[type="submit" i] {
 }
 
 @media (min-width: 1817px) {
+    form {
+        margin-bottom: 90px;
+        padding: 40px;
+    }
     .container-home {
         font-size: 25px;
     }
     h1 {
         font-size: 80px;
     }
-    audio {
-        width: 500px;
-        margin-top: 10px;
-    }
     .user {
         flex-direction: column;
-    }
-    .added-padding-width {
-        width: 600px;
-    }
-    .relative {
-        width: 622px;
     }
     .fixed-size {
         width: 100px;
     }
+    .added-padding-width {
+        width: 458px;
+    }
+    .relative-input, .opacity-input {
+        width: 480px;
+    }
     .spread {
         justify-content: center;
+        width: 100%;
+        margin: 30px 0;
+    }
+    .spread-date, .spread-color {
+        margin-bottom: 20px;
+    }
+    input[type="date"] {
+        width: 200px;
+        height: 30px;
+        padding: 20px;
+    }
+    fieldset {
+        width: 450px;
+        margin-top: 40px;  
+    }
+    audio {
+        width: 500px;
+    }
+    .audio {
+        margin: 60px 0;
+    }
+    #color {
+        width: 60px;
+        height: 60px;
     }
     .relative-textarea {
         margin-top: 20px;
         width: 800px;
         height: 600px;
     }
-    fieldset {
-        width: 450px;
+    .agreement {
+        margin: 40px;
+        width: 600px;
+    }
+    .send {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1816px){
+    form {
+        margin-bottom: 90px;
+        padding: 40px;
+    }
+    .container-home {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 70px;
+    }
+    .user {
+        flex-direction: column;
+    }
+    .fixed-size {
+        width: 100px;
+    }
+    .added-padding-width {
+        width: 458px;
+    }
+    .relative-input, .opacity-input {
+        width: 480px;
+    }
+    .spread {
+        justify-content: center;
+        width: 100%;
+        margin: 30px 0;
+    }
+    .spread-date, .spread-color {
+        margin-bottom: 20px;
+    }
+    input[type="date"] {
+        width: 200px;
+        height: 30px;
+        padding: 20px;
     }
     #color {
         width: 60px;
         height: 60px;
     }
-}
-
-@media (min-width: 1440px) and (max-width: 1816px) {
-    
-}
+    fieldset {
+        width: 450px;
+        margin-top: 40px;  
+    }
+    audio {
+        width: 500px;
+    }
+    .audio {
+        margin: 60px 0;
+    }
+    .relative-textarea {
+        margin-top: 20px;
+        width: 600px;
+        height: 500px;
+    }
+    .agreement {
+        margin: 40px;
+        width: 600px;
+    }
+    .send {
+        margin-bottom: 40px;
+    }
+}    
 
 @media (min-width: 1037px) and (max-width: 1439px) {
-  
+    form {
+        margin-bottom: 90px;
+        padding: 40px;
+    }
+    .container-home {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    .user {
+        flex-direction: column;
+    }
+    .fixed-size {
+        width: 100px;
+    }
+    .added-padding-width {
+        width: calc( 100% - 22px );
+    }
+    .relative-input, .opacity-input {
+        width: 300px;
+    }
+    .spread {
+        justify-content: center;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .spread-date, .spread-color {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .input-styling, .textarea-styling {
+        font-size: 18px;
+    }
+
+    input[type="date"] {
+        width: 150px;
+        height: 30px;
+        padding: 10px;
+    }
+    #color {
+        width: 50px;
+        height: 50px;
+    }
+    fieldset {
+        width: 300px;
+        margin-top: 30px;  
+    }
+    audio {
+        width: 400px;
+    }
+    .audio {
+        margin: 40px 0;
+    }
+    .relative-textarea {
+        margin-top: 20px;
+        width: 450px;
+        height: 350px;
+    }
+    .agreement {
+        margin: 20px;
+        width: 380px;
+        font-size: 16px;
+    }
+    .send {
+        margin-bottom: 40px;
+    }
+    input[type="submit" i] {
+        padding: 10px 25px;
+    }
+    .footer {
+        font-size: 15px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1036px) {
-  
+    form {
+        margin-bottom: 70px;
+        padding: 30px;
+    }
+    .container-home {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .user {
+        flex-direction: column;
+    }
+    .fixed-size {
+        width: 68px;
+    }
+    .added-padding-width {
+        width: calc( 100% - 22px );
+    }
+    .relative-input, .opacity-input {
+        width: 200px;
+    }
+    .spread {
+        justify-content: center;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .spread-date, .spread-color {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .input-styling, .textarea-styling {
+        font-size: 16px;
+    }
+    .relative-textarea {
+        margin-top: 20px;
+        width: 350px;
+        height: 250px;
+    }
+    .agreement {
+        margin: 10px;
+        width: 300px;
+        font-size: 15px;
+        text-align: left;
+    }
+    .send {
+        margin-bottom: 40px;
+    }
+    .footer {
+        font-size: 15px;
+        text-align: center;
+    }
 }
 
-@media (min-width: 425px) and (max-width: 767px) {
-    
+@media (min-width: 676px) and (max-width: 767px) {
+    nav {
+        justify-content: center;
+        padding: 45px 0;
+        font-size: 15px;
+    }
+    form {
+        margin-bottom: 70px;
+        padding: 30px;
+    }
+    .container-home {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .fixed-size {
+        width: 68px;
+    }
+    .added-padding-width {
+        width: calc( 100% - 22px );
+    }
+    .relative-input, .opacity-input {
+        width: 200px;
+    }
+    .spread {
+        justify-content: center;
+        width: 100%;
+        margin: 20px 0;
+    }
+    .spread-date, .spread-color {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .input-styling, .textarea-styling {
+        font-size: 16px;
+    }
+    .relative-textarea {
+        margin-top: 20px;
+        width: 280px;
+        height: 200px;
+    }
+    .agreement {
+        margin: 10px;
+        width: 200px;
+        font-size: 12px;
+        text-align: left;
+    }
+    .footer {
+        font-size: 15px;
+        text-align: center;
+    }
 }
 
-/* @media (min-width: 377px) and (max-width: 424px) { */
+@media (min-width: 377px) and (max-width: 675px) {
+    nav {
+        justify-content: center;
+        padding: 45px 0;
+        font-size: 15px;
+    }
+    form {
+        width: 250px;
+    }
+    .container-home {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .fixed-size {
+        width: auto;
+    }
+    .added-padding-width {
+        width: calc( 100% - 22px );
+    }
+    .relative-input, .opacity-input {
+        width: 200px;
+    }
+    .spread {
+        justify-content: center;
+        width: 100%;
+    }
+    .spread-date, .spread-color {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    fieldset {
+        width: 280px;
+
+    }
+    audio {
+        width: 200px;
+    }
+    .input-styling, .textarea-styling {
+        font-size: 15px;
+    }
+    .relative-textarea {
+        margin-top: 20px;
+        width: 240px;
+        height: 200px;
+    }
+    .agreement {
+        margin: 10px;
+        width: 300px;
+        font-size: 10px;
+        text-align: left;
+    }
+    .footer {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
 @media (min-width: 320px) and (max-width: 424px) {
-    
+    nav {
+        justify-content: center;
+        padding: 45px 0 25px 0;
+        font-size: 15px;
+    }
+    form {
+        width: 220px;
+        margin: 20px 0;
+    }
+    .container-home {
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .fixed-size {
+        width: auto;
+    }
+    .added-padding-width {
+        width: calc( 100% - 22px );
+    }
+    .relative-input, .opacity-input {
+        width: 150px;
+    }
+    .spread {
+        justify-content: center;
+        width: 100%;
+    }
+    .spread-date, .spread-color {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    legend {
+        text-align: center;
+    }
+    audio {
+        width: 200px;
+    }
+    .input-styling, .textarea-styling {
+        font-size: 13px;
+    }
+    .relative-textarea {
+        margin-top: 20px;
+        width: 220px;
+        height: 180px;
+    }
+    .agreement {
+        margin: 10px;
+        width: 300px;
+        font-size: 10px;
+        text-align: left;
+    }
+    .footer {
+        font-size: 12px;
+        text-align: center;
+        padding: 15px 0;
+    }
 }

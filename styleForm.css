@@ -54,21 +54,16 @@ h1 {
 }
 
 form {
-    /* margin: 20px 40px 40px 40px; */
     margin-bottom: 90px;
     border-radius: 13px; 
     border: 0.5px solid;
     border-color: #874a57;
-    background-color: #f4b910;
+    /* background-color: #f4b910; */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     color: #874a57;
     width: 50%;
     height: auto;
     padding: 40px;
-}
-
-.aligning {
-    margin: 20px; 
 }
 
 .input-styling, .textarea-styling {
@@ -92,7 +87,6 @@ form {
 
 .added-padding-width {
     padding: 5px 10px;
-    /* width: 350px; */
     width: calc( 100% - 20px );
 }
 
@@ -119,10 +113,6 @@ form {
     align-items: center;
 }
 
-/* .relative-input, .opacity-input {
-    width: 300px;
-} */
-
 .relative {
     width: 350px;
     height: 100%;
@@ -147,7 +137,7 @@ form {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -201,17 +191,17 @@ fieldset {
     flex-direction: column;
     flex-wrap: wrap;
 }
+.fieldset {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 3px 0;
+}
 legend {
     text-align: center;
 }
-
-/* .radio-button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-}  */
 
 input[type="radio"] {
     -webkit-appearance: none;
@@ -228,6 +218,7 @@ input[type="radio"] {
 
 audio {
     width: 400px;
+    margin-top: 20px;
 }
 
 .audio {
@@ -311,16 +302,10 @@ input[type="submit" i] {
     h1 {
         font-size: 80px;
     }
-    /* .added-padding-width {
-        width: 458px;
-    } */
-    .relative-input, .opacity-input {
-        width: 478px;
-    }
     .spread {
         margin: 30px 0;
     }
-    .spread-date, .spread-color {
+    .spread-date {
         margin-bottom: 20px;
     }
     input[type="date"] {
@@ -352,16 +337,10 @@ input[type="submit" i] {
 }
 
 @media (min-width: 1439px) and (max-width: 1816px){
-    /* .added-padding-width {
-        width: calc( 100% - 22px );
-    } */
-    .relative-input, .opacity-input {
-        width: 400px;
-    }
     .spread {
         margin: 30px 0;
     }
-    .spread-date, .spread-color {
+    .spread-date {
         margin-bottom: 20px;
     }
     input[type="date"] {
@@ -403,26 +382,13 @@ input[type="submit" i] {
     h1 {
         font-size: 60px;
     }
-    .user {
-        flex-direction: column;
-    }
     .fixed-size {
         width: 100px;
-    }
-    .added-padding-width {
-        width: calc( 100% - 22px );
-    }
-    .relative-input, .opacity-input {
-        width: 300px;
     }
     .spread {
         justify-content: center;
         width: 100%;
         margin: 20px 0;
-    }
-    .spread-date, .spread-color {
-        margin-bottom: 15px;
-        width: 100%;
     }
     .input-styling, .textarea-styling {
         font-size: 18px;
@@ -453,7 +419,7 @@ input[type="submit" i] {
         height: 350px;
     }
     .agreement {
-        margin: 20px;
+        margin: 40px 0;
         width: 380px;
         font-size: 16px;
     }
@@ -481,20 +447,11 @@ input[type="submit" i] {
     }
     .fixed-size {
         width: 68px;
-    }
-    .added-padding-width {
-        width: calc( 100% - 20px );
-    }
-    .relative-input, .opacity-input {
-        width: 200px;
+        text-align: center;
     }
     .spread {
         width: 100%;
         margin: 20px 0;
-    }
-    .spread-date, .spread-color {
-        margin-bottom: 15px;
-        width: 100%;
     }
     fieldset {
         width: 250px;
@@ -518,8 +475,11 @@ input[type="submit" i] {
         width: 300px;
         height: 250px;
     }
+    input[type="checkbox"] {
+        min-width: 15px;
+    }
     .agreement {
-        margin: 10px;
+        margin: 20px 0;
         width: 300px;
         font-size: 15px;
     }
@@ -547,21 +507,12 @@ input[type="submit" i] {
     }
     .fixed-size {
         width: 68px;
-    }
-    .added-padding-width {
-        width: calc( 100% - 22px );
-    }
-    .relative-input, .opacity-input {
-        width: 200px;
+        text-align: center;
     }
     .spread {
         justify-content: center;
         width: 100%;
         margin: 20px 0;
-    }
-    .spread-date, .spread-color {
-        margin-bottom: 15px;
-        width: 100%;
     }
     fieldset {
         width: 250px;
@@ -587,7 +538,6 @@ input[type="submit" i] {
         height: 200px;
     }
     .agreement {
-        margin: 10px;
         width: 200px;
         font-size: 12px;
         text-align: left;
@@ -606,6 +556,7 @@ input[type="submit" i] {
     }
     form {
         width: 250px;
+        margin-bottom: 60px;
     }
     .container-home {
         font-size: 15px;
@@ -616,17 +567,12 @@ input[type="submit" i] {
     .fixed-size {
         width: auto;
     }
-    .added-padding-width {
-        width: calc( 100% - 20px );
-    }
-    .relative-input, .opacity-input {
-        width: 200px;
-    }
     .spread {
         justify-content: center;
         width: 100%;
+        margin-top: 0;
     }
-    .spread-date, .spread-color {
+    .spread-color {
         margin-bottom: 10px;
         width: 100%;
     }
@@ -653,18 +599,23 @@ input[type="submit" i] {
         font-size: 15px;
     }
     .relative-textarea {
-        margin-top: 20px;
         width: 240px;
         height: 200px;
     }
     .agreement {
-        margin: 10px;
+        margin: 20px 0;
         width: 300px;
         font-size: 10px;
         text-align: left;
     }
+    input[type="checkbox"] {
+        min-width: 15px;
+    }
     input[type="submit" i] {
         padding: 8px 25px;
+    }
+    .send {
+        margin-bottom: 0;
     }
     .footer {
         font-size: 15px;
@@ -679,27 +630,22 @@ input[type="submit" i] {
         font-size: 15px;
     }
     form {
-        width: 220px;
-        margin: 20px 0;
+        width: 200px;
+        margin-bottom: 60px;
     }
     .container-home {
         font-size: 13px;
     }
     h1 {
-        font-size: 40px;
+        font-size: 35px;
     }
     .fixed-size {
         width: auto;
     }
-    .added-padding-width {
-        width: calc( 100% - 22px );
-    }
-    .relative-input, .opacity-input {
-        width: 150px;
-    }
     .spread {
         justify-content: center;
         width: 100%;
+        margin-top: 0;
     }
     .spread-date, .spread-color {
         margin-bottom: 10px;
@@ -736,13 +682,19 @@ input[type="submit" i] {
         height: 180px;
     }
     .agreement {
-        margin: 10px;
+        margin: 20px 0;
         width: 300px;
         font-size: 10px;
         text-align: left;
     }
+    input[type="checkbox"] {
+        min-width: 15px;
+    }
     input[type="submit" i] {
         padding: 8px 25px;
+    }
+    .send {
+        margin-bottom: 0;
     }
     .footer {
         font-size: 12px;

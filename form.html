@@ -30,25 +30,25 @@
       </section>
       <section class="form">
         <form method="POST" action="iDoNotExist.php">
-            <div class="aligning user">
+            <div class="user">
               <div class="spread">
                 <label class="fixed-size" for="lastname">Nom</label>
-                <div class="relative relative-input">
-                  <div class="opacity opacity-input"></div>
+                <div class="relative">
+                  <div class="opacity"></div>
                     <input class="added-padding-width input-styling" type="text" id="lastname" name="lastname" placeholder="Dela" required>
                 </div>
               </div>
               <div class="spread">
                   <label class="fixed-size" for="firstname">Prénom</label>
-                  <div class="relative relative-input">
-                    <div class="opacity opacity-input"></div>
+                  <div class="relative">
+                    <div class="opacity"></div>
                     <input class="added-padding-width input-styling" type="text" id="firstname" name="firstname" placeholder="Lena" required>
                   </div>
               </div>
               <div class="spread">
                   <label class="fixed-size" for="email">Email</label>
-                  <div class="relative relative-input">
-                    <div class="opacity opacity-input"></div>
+                  <div class="relative">
+                    <div class="opacity"></div>
                     <input class="added-padding-width input-styling" type="email" id="email" name="email" placeholder="lena@dela.com" required>
                   </div>
               </div>
@@ -56,49 +56,49 @@
                 <label class="spread-date" for="date">Date de naissance</label>
                 <input class="added-padding-width input-styling" type="date" id="date" name="date-of-birth" required>
               </div>
-              <div class="aligning color">
-                <label class="      spread-color" for="color">Couleur préférée</label>
+              <div class="color">
+                <label class="spread-color" for="color">Couleur préférée</label>
                 <input class="added-padding-width" value="#874a57" type="color" id="color" name="color">
               </div>
               <fieldset>
                 <legend>À quel genre vous identifiez-vous?</legend>
-                <div>
+                <div class="fieldset">
                   <input class="input-styling" type="radio" name="gender" value="female" id="female"> 
-                  <label for="female" class="radio-button">Féminin</label>
+                  <label for="female">Féminin</label>
                 </div>
-                <div>
+                <div class="fieldset">
                   <input class="input-styling" type="radio" name="gender" value="male" id="male">
-                  <label for="male" class="radio-button">Masculin</label>
+                  <label for="male">Masculin</label>
                 </div>
-                <div>
+                <div class="fieldset">
                   <input class="input-styling" type="radio" name="gender" value="other" id="other">
-                  <label for="other" class="radio-button">Autre</label>
+                  <label for="other">Autre</label>
                 </div>
-                <div>
+                <div class="fieldset">
                   <input class="input-styling" type="radio" name="gender" value="wouldRatherNotSay" id="wouldRatherNotSay">
-                  <label for="wouldRatherNotSay" class="radio-button">Préfère ne pas spécifier</label>
+                  <label for="wouldRatherNotSay">Préfère ne pas spécifier</label>
                 </div>
               </fieldset>
             </div>
             <div class="audio">
-              <label class="aligning" for="audio">Et si vous m'écoutiez?</label> 
+              <label for="audio">Et si vous m'écoutiez?</label> 
                   <audio controls>
                     <source src="media/everywhere.mp3" type="audio/mp3">
                     Votre navigateur ne supporte pas l'élément audio.
                   </audio>
             </div>           
-            <div class="aligning comment">
+            <div class="comment">
               <label class="added-padding-width" for="comments">Vos questions et commentaires</label> 
               <div class="relative-textarea">
                 <div class="opacity"></div>
                 <textarea class="textarea-space-size textarea-styling" name="comments" id="comments" cols="1" rows="10" placeholder="Écrivez ici..." maxlength="1200" required></textarea>
               </div>
             </div>
-            <div class="aligning agree">
+            <div class="agree">
               <input class="checkbox input-styling" type="checkbox" name="agreement" value="mustAgree" id="agreement" required>
               <label class="added-padding-width agreement" for="agreement">J'ai conscience que ce formulaire n'est qu'un test et que mes réponses ne seront jamais lues par personne.</label>
             </div>
-            <div class="aligning send">
+            <div class="send">
               <input class="input-styling" type="submit" value="Envoyer">
             </div>
         </form>

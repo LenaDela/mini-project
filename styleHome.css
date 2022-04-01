@@ -29,7 +29,7 @@ header {
 nav {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: right;
     align-items: center;
     padding: 45px 65px;
@@ -51,12 +51,12 @@ a:hover {
 .intro-header {
     display: flex;
     height: 350px;
-    flex-direction: row-reverse;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch; 
+    align-items: center; 
     text-align: center; 
-    margin: 0 0 90px 0;
+    margin: 40px 0;
     height: 100%;
 }
 
@@ -76,13 +76,15 @@ h1 {
 }
 
 .intro {
-    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 500px;
+}
+
+.intro p, .hover-message>a {
+    margin: 20px 0;
 }
 
 img {
@@ -101,7 +103,7 @@ h2 {
 }
 
 .middle {
-    width: 90%;
+    width: 70%;
 }
 
 .bio {
@@ -166,9 +168,8 @@ ul {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 90px 40px 90px;
+    padding: 20px 90px;
     font-size: 20px;
-    margin-top: 100px;
 }
 
 li {
@@ -182,7 +183,6 @@ li {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 80px;
 }
 
 .first-impressions ul {
@@ -240,20 +240,9 @@ ol li {
 }
 
 @media (min-width: 1817px) {
-    .intro-header>div {
-        margin: 0 90px;
-    }
-    .intro-header{
-        flex-direction: column;
-        align-items: center;
-    }
     .intro h1{
         font-size: 90px;
         padding-bottom: 40px;
-    }
-    .intro p, .hover-message>a {
-        font-size: 25px;
-        margin: 10px;
     }
     .hover-message {
         padding-top: 50px;
@@ -276,20 +265,9 @@ ol li {
 }
 
 @media (min-width: 1440px) and (max-width: 1816px) {
-    .intro-header>div {
-        margin: 0 90px;
-    }
-    .intro-header{
-        flex-direction: column;
-        align-items: center;
-    }
     .intro h1{
         font-size: 60px;
         padding-bottom: 30px;
-    }
-    .intro p, .hover-message>a {
-        font-size: 25px;
-        margin: 10px;
     }
     h2 {
         font-size: 50px;
@@ -306,9 +284,6 @@ ol li {
 }
 
 @media (min-width: 1037px) and (max-width: 1439px) {
-    .intro-header>div {
-        margin: 0 90px;
-    }
     .line, ul {
         flex-direction: column;
     }
@@ -352,10 +327,8 @@ ol li {
         padding: 45px 0;
     }
     .intro h1{
+        font-size: 45px;
         padding-bottom: 50px;
-    }
-    .intro p {
-        margin: 5px;
     }
     .hover-message {
         padding-top: 50px;
@@ -367,16 +340,18 @@ ol li {
         width: 100%;
         padding-top: 50px;
     }
+    .bio {
+        padding: 50px 0;
+    }
     h3 {
         font-size: 30px;
-        justify-content: flex-start;
+        justify-content: center;
     }
     .line, ul {
         flex-direction: column;
     }
     .first-impressions>ul {
         font-size: 18px;
-        height: 100%;
     }
     .best-impressions {
         flex-direction: column;
@@ -388,24 +363,15 @@ ol li {
 
 @media (min-width: 377px) and (max-width: 424px) {
     nav {
-        justify-content: center;
-        flex-direction: column;
+        justify-content: space-evenly;
         font-size: 15px;
-    }
-    .nav-elements{
-        margin: 3px 0;
     }
     .intro h1{
         font-size: 40px;
         padding-bottom: 50px;
-        width: 40%;
-    }
-    .intro p, .hover-message>a {
-        font-size: 18px;
-        margin: 5px;
     }
     .hover-message {
-        padding-top: 50px;
+        font-size: 16px;
     }
     .hover-message>img {
         width: 300px;
@@ -413,12 +379,18 @@ ol li {
     h2 {
         font-size: 30px;
     }
+    .bio {
+        padding: 50px 0;
+    }
     figcaption {
         font-size: 20px;
     }
+    figure {
+        padding: 0;
+    }
     figure>img {
         width: 100%;
-        padding-top: 50px;
+        padding-top: 10px;
     }
     h3 {
         font-size: 25px;
@@ -426,6 +398,9 @@ ol li {
     .first-impressions>ul {
         font-size: 15px;
         height: 100%;
+    }
+    .first-impressions {
+        margin-bottom: 0;
     }
     .best-impressions {
         justify-content: flex-start;
@@ -441,36 +416,39 @@ ol li {
 
 @media (min-width: 320px) and (max-width: 376px) {
     nav {
-        justify-content: center;
-    }
-    .nav-elements{
+        justify-content: space-evenly;
         font-size: 15px;
-        margin: 3px;
+    }
+    .container-home, li {
+        font-size: 18px;
+    }
+    .intro-header {
+        margin-top: 0;
     }
     .intro h1{
-        font-size: 40px;
-        padding-bottom: 50px;
-        width: 40%;
-    }
-    .intro p, .hover-message>a {
-        font-size: 18px;
-        margin: 5px;
+        font-size: 35px;
     }
     .hover-message {
-        padding-top: 50px;
+        font-size: 16px;
     }
     .hover-message>img {
-        width: 300px;
+        width: 250px;
     }
     h2 {
         font-size: 30px;
     }
+    .bio {
+        padding: 50px 0;
+    }
     figcaption {
         font-size: 20px;
     }
+    figure {
+        padding: 0;
+    }
     figure>img {
         width: 100%;
-        padding-top: 50px;
+        padding-top: 10px;
     }
     h3 {
         font-size: 22px;

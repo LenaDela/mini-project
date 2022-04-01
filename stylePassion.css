@@ -25,21 +25,6 @@ header {
     text-align: center;
 }
 
-.padding-horizontal {
-    padding: 0 15%;
-}
-
-.intro-header {
-    color: #253213;
-    margin-bottom: 20%;
-}
-
-h1 {
-    margin-top: 0%;
-    font-family: rafelya;
-    font-size: 55px;
-}
-
 nav {
     display: flex;
     flex-direction: row;
@@ -62,14 +47,25 @@ a {
     color: #253213;
 }
 
+.padding-horizontal {
+    padding: 0 15%;
+}
+
+.intro-header {
+    color: #253213;
+    margin-bottom: 20%;
+}
+
 .passion-img {
     width: 80%;
     max-width: 700px;
     height: auto;
 }
 
-.hike {
-    mix-blend-mode: multiply;
+h1 {
+    margin-top: 0%;
+    font-family: rafelya;
+    font-size: 55px;
 }
 
 .content {
@@ -120,14 +116,14 @@ a:active {
 }
 
 h2 {
-    font-family: rafelya !important;
+    font-family: rafelya;
     font-size: 55px;
     width: 100%;
     margin: 0;
 }
 
 h3 {
-    font-family: rafelya !important;
+    font-family: rafelya;
     font-size: 35px;
 }
 
@@ -175,6 +171,10 @@ main {
     justify-content: center;
     background-color: bisque;
     width: 50%;
+}
+
+.hike {
+    mix-blend-mode: multiply;
 }
 
 .sport,
@@ -291,6 +291,9 @@ ul {
     p {
         font-size: 20px;
     }
+    .sport, .art, .culture {
+        margin-bottom: 30px 0;
+    }
     .activity>p {
         font-size: 20px;
     }
@@ -303,6 +306,11 @@ ul {
     .activity>h3 {
         font-size: 30px;
     }
+    .footer {
+        font-size: 16px;
+        text-align: center;
+        padding: 30px 40px;
+    } 
  
 }
 
@@ -346,9 +354,13 @@ ul {
     .sport, .art, .culture{
         margin: 15px 0;
     }
+    .footer {
+        font-size: 16px;
+        text-align: center;
+        padding: 30px 40px;
+    } 
 }
 
-/* @media (min-width: 377px) and (max-width: 424px) { */
 @media (min-width: 320px) and (max-width: 424px) {
     nav {
         justify-content: center;
@@ -368,6 +380,11 @@ ul {
     ul {
         flex-direction: column;
         margin: 0;
+    }
+    .intro {
+        padding: 35px 35px;
+        justify-content: center;
+        text-align: center;
     }
     .divided-content{
         margin: 20px 0;

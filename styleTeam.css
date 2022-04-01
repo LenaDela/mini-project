@@ -133,12 +133,6 @@ tfoot>tr>td {
     border: none;
 }
   
-@media (min-width: 768px) and (max-width: 1036px) {
-    /* th {
-        font-size: 15px;
-    } */
-}
-
 @media (max-width: 970px) {
     nav {
         justify-content: center;
@@ -178,7 +172,6 @@ tfoot>tr>td {
     .text-center {
         position: absolute;
         width: calc( 20% - 41px );
-        /* height: calc( 196px - 42px ); */
         height: calc( 100% - 42px );
         top: 0;
         right: 0;

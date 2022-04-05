@@ -1,51 +1,9 @@
-@font-face {
-    font-family: rafelya;
-    src: url(fonts/RafelyaCarrotin.ttf);
-}
-
-@font-face {
-    font-family: catthy;
-    src: url(fonts/CatthyWellingten.ttf);
-}
-
-@font-face {
-    font-family: scientist;
-    src: url(fonts/TheScientist.ttf);
-}
-
 .container-home {
     background-color: #f4b910;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 300;
-    font-size: 21px;
-    margin: 0;
-    color: #253213;
 }
 
 header {
     text-align: center;
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: right;
-    align-items: center;
-    padding: 45px 65px;
-}
-
-.nav-elements {
-   margin: 0 15px;
-}
-
-a {
-    text-decoration: none;
-    color: #253213;
-}
-
-a:hover {
-    color: #e36b4f;
 }
 
 .intro-header {
@@ -58,12 +16,6 @@ a:hover {
     text-align: center; 
     margin: 40px 0;
     height: 100%;
-}
-
-h1 {
-    font-family: rafelya;
-    font-size: 55px;
-    margin-bottom: 0;
 }
 
 .hover-message {
@@ -363,8 +315,9 @@ ol li {
 
 @media (min-width: 377px) and (max-width: 424px) {
     nav {
-        justify-content: space-evenly;
+        justify-content: center;
         font-size: 15px;
+        padding: 45px 0 0 0;
     }
     .intro h1{
         font-size: 40px;
@@ -416,8 +369,9 @@ ol li {
 
 @media (min-width: 320px) and (max-width: 376px) {
     nav {
-        justify-content: space-evenly;
+        justify-content: center;
         font-size: 15px;
+        padding: 45px 0;
     }
     .container-home, li {
         font-size: 18px;

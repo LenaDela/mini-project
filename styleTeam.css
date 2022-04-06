@@ -40,7 +40,7 @@ table {
 }
 
 th {
-    font-family: rafelya !important;
+    font-family: rafelya, sans-serif;
     font-size: 17px;
     text-align: left;
 }
@@ -72,8 +72,8 @@ td {
 }
 
 tfoot {
-    font-family: rafelya !important;
-    font-size: 20px !important;
+    font-family: rafelya, sans-serif;
+    font-size: 20px;
     text-align: center;
 }
 

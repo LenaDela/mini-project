@@ -25,14 +25,14 @@ header {
 }
 
 .table-of-content {
-    margin-bottom: 10%;
+    margin: 100px 0;
     width: 100%;
 }
 
 .main-topic {
     font-weight: bold;
-    font-family: rafelya !important;
-    font-size: 25px !important;
+    font-family: rafelya, sans-serif;
+    font-size: 25px;
     padding-bottom: 7px;
 }
 
@@ -60,14 +60,14 @@ a:active {
 }
 
 h2 {
-    font-family: rafelya;
+    font-family: rafelya, sans-serif;;
     font-size: 55px;
     width: 100%;
     margin: 0;
 }
 
 h3 {
-    font-family: rafelya;
+    font-family: rafelya, sans-serif;
     font-size: 35px;
 }
 
@@ -326,7 +326,7 @@ ul {
         margin: 0;
     }
     .intro {
-        padding: 35px 35px;
+        padding: 35px;
         justify-content: center;
         text-align: center;
     }

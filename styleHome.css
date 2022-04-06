@@ -51,7 +51,7 @@ img {
 h2 {
     font-weight: bolder;
     font-size: 40px;
-    font-family: rafelya !important;
+    font-family: rafelya, sans-serif;
 }
 
 .middle {
@@ -109,7 +109,7 @@ h3 {
     width: 100%;
     margin-bottom: 0;
     font-size: 50px;
-    font-family: rafelya !important;
+    font-family: rafelya, sans-serif;
     font-weight: bold;
     background-color: antiquewhite;
 }
@@ -268,7 +268,7 @@ ol li {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 35px 35px;
+        padding: 35px;
     }
 }
 
@@ -309,7 +309,7 @@ ol li {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 35px 35px;
+        padding: 35px;
     }
 }
 
@@ -358,7 +358,7 @@ ol li {
     .best-impressions {
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 25px 25px;
+        padding: 25px;
         font-size: 15px;
     }
     .footer {

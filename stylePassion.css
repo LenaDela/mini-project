@@ -1,24 +1,5 @@
-@font-face {
-    font-family: rafelya;
-    src: url(fonts/RafelyaCarrotin.ttf);
-}
-
-@font-face {
-    font-family: catthy;
-    src: url(fonts/CatthyWellingten.ttf);
-}
-
-@font-face {
-    font-family: scientist;
-    src: url(fonts/TheScientist.ttf);
-}
-
 .container-home {
     background-color: #f4b910;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 300;
-    font-size: 21px;
-    margin: 0;
 }
 
 header {
@@ -29,47 +10,10 @@ header {
     padding: 0 15%;
 }
 
-.intro-header {
-    color: #253213;
-    margin-bottom: 20%;
-}
-
-h1 {
-    margin-top: 0%;
-    font-family: rafelya !important;
-    font-size: 55px !important;
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: right;
-    align-items: center;
-    padding: 45px 65px 45px 0;
-}
-
-.nav-elements {
-    margin: 0 15px;
-}
- 
-a {
-    text-decoration: none;
-    color: #253213;
-}
-
-.nav {
-    color: #253213;
-}
-
 .passion-img {
     width: 80%;
     max-width: 700px;
     height: auto;
-}
-
-.hike {
-    mix-blend-mode: multiply;
 }
 
 .content {
@@ -81,14 +25,14 @@ a {
 }
 
 .table-of-content {
-    margin-bottom: 10%;
+    margin: 100px 0;
     width: 100%;
 }
 
 .main-topic {
     font-weight: bold;
-    font-family: rafelya !important;
-    font-size: 25px !important;
+    font-family: rafelya, sans-serif;
+    font-size: 25px;
     padding-bottom: 7px;
 }
 
@@ -111,25 +55,21 @@ a {
     color: #253213;
 }
 
-a:hover {
-    color: #e36b4f;
-}
-
 a:active {
     color: #f9e0db;
 }
 
 h2 {
-    font-family: rafelya !important;
-    font-size: 55px !important;
+    font-family: rafelya, sans-serif;;
+    font-size: 55px;
     width: 100%;
     margin: 0;
 }
 
- h3 {
-    font-family: rafelya !important;
-    font-size: 35px !important;
- }
+h3 {
+    font-family: rafelya, sans-serif;
+    font-size: 35px;
+}
 
 main {
     display: flex;
@@ -152,7 +92,7 @@ main {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start ;
+    align-items: flex-start;
     padding: 45px 80px;
     background-color: #874a57;
     color: #f9e0db;
@@ -177,24 +117,31 @@ main {
     width: 50%;
 }
 
-.sport, .art, .culture {
+.hike {
+    mix-blend-mode: multiply;
+}
+
+.sport,
+.art,
+.culture {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     width: 100%;
-    text-align: center; 
+    text-align: center;
 }
 
 .activity {
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     width: calc(50% - 100px);
     padding: 0 50px;
 }
 
-.activity p, ul {
+.activity p,
+ul {
     font-size: 20px;
 }
 
@@ -210,10 +157,203 @@ main {
     color: #f9e0db;
 }
 
-@media (min-width: 1201px) {
-
+@media (min-width: 1817px) {
+    h1 {
+        font-size: 80px;
+    }
+    p {
+        font-size: 30px;
+    }
+    .activity>p {
+        font-size: 30px;
+    }
+    .main-topic>a {
+        font-size: 45px;
+    }
+    li {
+        font-size: 30px;
+    }
+    .activity>h3 {
+        font-size: 45px;
+    }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 1440px) and (max-width: 1816px) {
+    h1 {
+        font-size: 70px;
+    }
+    p {
+        font-size: 25px;
+    }
+    .activity>p {
+        font-size: 25px;
+    }
+    .main-topic>a {
+        font-size: 35px;
+    }
+    li {
+        font-size: 25px;
+    }
+    .activity>h3 {
+        font-size: 50px;
+    }
+}
 
+@media (min-width: 1037px) and (max-width: 1439px) {
+    h1 {
+        font-size: 60px;
+    }
+    p {
+        font-size: 23px;
+    }
+    h2{
+        font-size: 45px;
+    }
+    .activity>p {
+        font-size: 20px;
+    }
+    .main-topic>a {
+        font-size: 33px;
+    }
+    li {
+        font-size: 22px;
+    }
+    .activity>h3 {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1036px) {
+    nav {
+        justify-content: center;
+        width: 100%;
+        padding: 45px 0;
+    }
+    h2{
+        font-size: 40px;
+    }
+    p {
+        font-size: 20px;
+    }
+    .sport, .art, .culture {
+        margin-bottom: 30px 0;
+    }
+    .activity>p {
+        font-size: 20px;
+    }
+    .main-topic>a {
+        font-size: 30px;
+    }
+    li {
+        font-size: 20px;
+    }
+    .activity>h3 {
+        font-size: 30px;
+    }
+    .footer {
+        font-size: 16px;
+        text-align: center;
+        padding: 30px 40px;
+    } 
+ 
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    nav {
+        justify-content: center;
+        width: 100%;
+        padding: 45px 0;
+    }
+    h1{
+        font-size: 45px;
+    }
+    h2{
+        font-size: 35px;
+    }
+    p {
+        font-size: 18px;
+    }
+    ul {
+        flex-direction: column;
+        margin: 0;
+    }
+    .divided-content{
+        margin: 20px 0;
+    }
+    .activity>p {
+        font-size: 18px;
+    }
+    .main-topic>a {
+        font-size: 25px;
+    }
+    li {
+        font-size: 18px;
+    }
+    .activity {
+        width: 100%;
+    }
+    .activity>h3 {
+        font-size: 25px;
+    }
+    .sport, .art, .culture{
+        margin: 15px 0;
+    }
+    .footer {
+        font-size: 16px;
+        text-align: center;
+        padding: 30px 40px;
+    } 
+}
+
+@media (min-width: 320px) and (max-width: 424px) {
+    nav {
+        justify-content: center;
+        width: 100%;
+        padding: 45px 0;
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    p {
+        font-size: 18px;
+    }
+    ul {
+        flex-direction: column;
+        margin: 0;
+    }
+    .intro {
+        padding: 35px;
+        justify-content: center;
+        text-align: center;
+    }
+    .divided-content{
+        margin: 20px 0;
+    }
+    .activity {
+        width: 100%;
+    }
+    .activity>p {
+        font-size: 16px;
+    }
+    .main-topic>a {
+        font-size: 20px;
+    }
+    li {
+        font-size: 18px;
+    }
+    .activity>h3 {
+        font-size: 20px;
+    }
+    .sport, .art, .culture{
+        margin: 15px 0;
+    }  
+    .footer {
+        font-size: 16px;
+        text-align: center;
+        padding: 30px 40px;
+    }  
 }

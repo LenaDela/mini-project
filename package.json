@@ -1,0 +1,22 @@
+{
+  "name": "mini-project",
+  "version": "1.0.0",
+  "description": "Mini project for testing things Very small project, in continuous progress, to that I can learn different things",
+  "main": "data.js",
+  "scripts": {
+    "start": "node data.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LenaDela/mini-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LenaDela/mini-project/issues"
+  },
+  "homepage": "https://github.com/LenaDela/mini-project#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.3"
+  }
+}

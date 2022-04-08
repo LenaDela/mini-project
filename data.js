@@ -25,7 +25,7 @@ async function getDataFromApi(URL) {
     img.src = item.avatar;
     
     tbody.appendChild(tr);
-    tr.appendChild(td);
+    tr?.appendChild(td);
     tr.appendChild(td2);
     tr.appendChild(td3);
     tr.appendChild(td4);

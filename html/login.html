@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lena's ZOL, login page.">
+    <script src="https://kit.fontawesome.com/cc98416f81.js" crossorigin="anonymous"></script>
+    <script src="../js/toggleIcon.js"></script>
+    <script src="../js/login.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/styleLogin.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js"></script>
+    <title>Login</title>
+</head>
+<body class="container-home">
+    <header>
+        <nav>
+          <div class="nav-elements">
+            <a href="mini.html" title="Revenir à l'accueil">HOME</a>
+          </div>
+          <div class="nav-elements">
+            <a href="passions.html" title="Voir le fruit de la passion">PASSIONS</a>
+          </div>
+          <div class="nav-elements">
+            <a href="team.html" title="Découvrir l'équipe">TEAM</a>
+          </div>
+          <div class="nav-elements">
+            <a href="form.html" title="Nous écrire">CONTACT</a>
+          </div>
+        </nav>
+      </header>
+      <main class="content">
+        <section class="intro-section">
+          <div class="intro-header">
+            <h1>Login</h1>
+          </div>
+        </section>
+        <section class="message" id="message">
+          <div class="error-message" id="error-message">
+            <p class="specific-error" id="specific-error">AUTHENTIFIEZ-VOUS</p>
+          </div>
+        </section>
+        <section class="form">
+          <form id="loginForm"> 
+              <div class="user">
+                <div class="spread">
+                    <label class="fixed-size" for="email">Email</label>
+                    <div class="relative">
+                      <div class="opacity"></div>
+                      <input class="added-padding-width input-styling" type="email" id="email" name="email" value="" placeholder="lena@dela.com" required>
+                      <!-- <small></small> -->
+                    </div>
+                </div>
+                <div class="spread">
+                  <label class="fixed-size" for="password">Mot de passe</label>
+                  <div class="relative">
+                    <div class="opacity"></div>
+                      <input class="added-padding-width input-styling" type="password" id="password" name="password" placeholder="Mot de passe" required>
+                      <span class="eye-icon" id="toggleIcon" onclick="changeIcon()"><i class="fa-solid fa-eye" id="icon"></i></span>
+                      <!-- <small></small> -->
+                  </div>
+                </div>
+              </div>           
+              <div class="send">
+                <input id="sendBtn" class="input-styling" type="submit" value="Envoyer">
+              </div>
+          </form>
+        </section>
+      </main>
+      <footer>
+        <div class="footer">Made with passion in Lyon ©</div>
+      </footer>
+</body>
+</html>

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Lena's ZOL, login page.">
     <script src="https://kit.fontawesome.com/cc98416f81.js" crossorigin="anonymous"></script>
-    <script src="togglePassword.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="styleLogin.css" />
+    <script src="../js/toggleIcon.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/styleLogin.css" />
     <title>Login</title>
 </head>
 <body class="container-home">
@@ -49,8 +49,7 @@
                   <div class="relative">
                     <div class="opacity"></div>
                       <input class="added-padding-width input-styling" type="password" id="password" name="password" placeholder="Mot de passe" required>
-                      <span class="eye-icon" id="togglePassword"><i class="fa-solid fa-eye"></i></span>
-                      <!-- <i class="fa-solid fa-eye-slash"></i> -->
+                      <span class="eye-icon" id="toggleIcon" onclick="changeIcon()"><i class="fa-solid fa-eye" id="icon"></i></span>
                   </div>
                 </div>
               </div>           

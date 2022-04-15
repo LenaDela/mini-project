@@ -19,6 +19,10 @@ h1 {
   font-size: 75px;
 }
 
+h3 {
+  font-family: rafelya, sans-serif;
+}
+
 .team-table {
   display: flex;
   flex-flow: column wrap;

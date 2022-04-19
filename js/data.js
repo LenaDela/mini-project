@@ -8,11 +8,11 @@ async function getDataFromApi(URL) {
   let result = await response.json();
   console.log(result);
 
-  let table = document.getElementById("teamTable");
   let tbody = document.createElement("tbody");
   let tfoot = document.getElementById("tfoot");
-  table.insertBefore(tbody, tfoot); // inserts tbody before tfoot in table
+  tfoot.parentNode.insertBefore(tbody, tfoot); // inserts tbody before tfoot in table
   let users = result.data;
+
   console.log(users);
 
   users.map((user) => {
@@ -91,14 +91,13 @@ async function getQuote(quotesApi) {
   let footer = document.getElementById("footer");
   let pQuote = document.createElement("p");
   footer.parentNode.insertBefore(pQuote, footer);
-  
+
   let quotes = result.value;
   console.log(quotes);
 
   pQuote.innerHTML = quotes;
 }
 getQuote(quotesApi);
-
 
 /* RICK AND MORTY API EXAMPLE */
 const charactersApi = "https://rickandmortyapi.com/api/character";
@@ -113,12 +112,12 @@ async function getCharacter(charactersApi) {
   let footer = document.getElementById("footer");
   let table = document.createElement("table");
   let tbody = document.createElement("tbody");
-  
+
   footer.parentNode.insertBefore(table, footer);
 
-  let characters = result.results;  
+  let characters = result.results;
   console.log(characters);
-  
+
   characters.map((character) => {
     let tr = document.createElement("tr");
     let td = document.createElement("td");
@@ -127,10 +126,10 @@ async function getCharacter(charactersApi) {
     let td4 = document.createElement("td");
     let td5 = document.createElement("td");
     let div = document.createElement("div");
-    
+
     let img = new Image(); // It is functionally equivalent to document.createElement('img').
     img.src = character.image;
-    
+
     table.appendChild(tbody);
     tbody.appendChild(tr);
     tr.appendChild(td);
@@ -152,11 +151,10 @@ async function getCharacter(charactersApi) {
     td4.className = "role";
     td5.className = "image-container";
     div.className = "styling-image";
-  })
+  });
 }
 
 getCharacter(charactersApi);
-
 
 /* POKEMON API EXAMPLE */
 const pokemonApi = "https://pokeapi.co/api/v2/pokemon/?limit=151";
@@ -173,20 +171,31 @@ async function getPokemon(pokemonApi) {
 
   footer.parentNode.insertBefore(div, footer);
 
-  let pokemons = result.results;  
+  let pokemons = result.results;
   console.log(pokemons);
 
   pokemons.map((pokemon) => {
-    let div1= document.createElement("div");
-    let div2= document.createElement("div");
+    let div1 = document.createElement("div");
+    let p1 = document.createElement("p");
+    let a = document.createElement("a");
 
-    // let img = new Image();
+    let img = new Image(); // It is functionally equivalent to document.createElement('img').
+    img.src = "../media/pokeball4.png";
 
     div.appendChild(div1);
-    div.appendChild(div2);
-    div1.innerHTML = pokemon.name;
-    div2.innerHTML = pokemon.url;
-  })
+    div1.appendChild(p1);
+    div1.appendChild(a);
+    p1.innerHTML = pokemon.name;
+    a.href = pokemon.url;
+    a.target = "_blank"
+    a.appendChild(img);
+
+    div.className = "align-middle";
+    div1.className = "pokecard";
+    p1.className = "poke-name";
+    a.className = "poke-link";
+    img.classList = "poke-img";
+  });
 }
 
 getPokemon(pokemonApi);

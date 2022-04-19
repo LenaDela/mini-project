@@ -149,6 +149,49 @@ tfoot > tr > td {
   text-align: right;
 }
 
+.align-middle {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokecard {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid white;
+  border-radius: 13px;
+  width: 350px;
+  height: 500px;
+  margin: 50px 0;
+  position: relative;
+  background-image: linear-gradient(rgba(231, 231, 243, 0.951), rgba(255, 255, 0, 0.5)), url("../media/pokecolors.jpg");
+}
+
+.poke-name {
+  font-size: 40px;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.poke-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  position: absolute;
+  margin-bottom: 60px;
+  opacity: 0.85;
+}
+
+.poke-link {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 971px) and (max-width: 1439px) {
   th {
     font-size: 17px;

@@ -168,34 +168,124 @@ async function getPokemon(pokemonApi) {
 
   let footer = document.getElementById("footer");
   let div = document.createElement("div");
+  div.setAttribute("id", "poke-list");
+  div.className = "align-middle";
 
   footer.parentNode.insertBefore(div, footer);
 
   let pokemons = result.results;
   console.log(pokemons);
 
-  pokemons.map((pokemon) => {
-    let div1 = document.createElement("div");
-    let p1 = document.createElement("p");
-    let a = document.createElement("a");
+  /************************************** */
 
-    let img = new Image(); // It is functionally equivalent to document.createElement('img').
-    img.src = "../media/pokeball4.png";
+  // const alphabetBtn = document.getElementById("btn-alphabet");
+  // alphabetBtn.addEventListener("click", changeColor);
+  // function changeColor() {
+  //   alphabetBtn.style.color = "blue";
+  // }
 
-    div.appendChild(div1);
-    div1.appendChild(p1);
-    div1.appendChild(a);
-    p1.innerHTML = pokemon.name;
-    a.href = pokemon.url;
-    a.target = "_blank"
-    a.appendChild(img);
+  // const alphabetBtn = document.getElementById("btn-alphabet");
+  // alphabetBtn.addEventListener("click", changeOrder);
+  // function changeOrder() {
+  //   alphabetBtn.sort();
+  // }
+  // console.log(alphabetBtn);
 
-    div.className = "align-middle";
-    div1.className = "pokecard";
-    p1.className = "poke-name";
-    a.className = "poke-link";
-    img.classList = "poke-img";
-  });
+  // function f_sort(list) {
+
+  //   return list.sort((a, b) => a.name.localeCompare(b.name));
+  // }
+  // console.log(f_sort(pokemons)); 
+
+  /************************************** */
+
+  function renderPokeList(filterVowel, filterAlphabet) {
+    const pokeList = document.getElementById("poke-list");
+    pokeList.innerHTML = "";
+    // added "[].concat()" instead of just "pokemons". Try to understand why
+    let filteredPokemon = [].concat(pokemons);
+    // just example, can remove that first if after 
+    if (filterVowel) {
+      //Phiphi says should write filteredPokemon = filteredPokemon.filter((pokemon))...don't quite get it
+      filteredPokemon = pokemons.filter((pokemon) =>
+        /^[b]/i.test(pokemon.name)
+      );
+    }
+    if (filterVowel) {
+      filteredPokemon = pokemons.filter((pokemon) =>
+        /^[aeiouy]/i.test(pokemon.name)
+      );
+      // ?????
+      // filterAlphabet
+    }
+
+    if (filterAlphabet) {
+      filteredPokemon = filteredPokemon.sort((a, b) => a.name.localeCompare(b.name));
+        console.log(pokemons);
+        console.log(filteredPokemon);
+    }
+    // const filterPokemon = (pokemon) => {
+    //   /**if (filterVowel === true), boolean */
+    //   if (filterVowel) {
+    //     return (/^[aeiouy]/i.test(pokemon.name))
+    //   }
+    //   return true;
+    // }
+
+    // pokemons.filter(filterPokemon).map((pokemon) => {
+    filteredPokemon.map((pokemon) => {
+      let div1 = document.createElement("div");
+      let p1 = document.createElement("p");
+      let a = document.createElement("a");
+
+      let img = new Image(); // It is functionally equivalent to document.createElement('img').
+      img.src = "../media/pokeball4.png";
+
+      pokeList.appendChild(div1);
+      div1.appendChild(p1);
+      div1.appendChild(a);
+      p1.innerHTML = pokemon.name;
+      a.href = pokemon.url;
+      a.target = "_blank";
+      a.appendChild(img);
+
+      div1.className = "pokecard";
+      p1.className = "poke-name";
+      a.className = "poke-link";
+      img.className = "poke-img";
+    });
+  }
+  renderPokeList(false);
+
+  const vowelBtn = document.getElementById("btn-vowel");
+  vowelBtn.addEventListener("click", getVowelPoke);
+  function getVowelPoke() {
+    if (vowelBtn.innerHTML != "Names starting with a vowel") {
+      renderPokeList(false, false);
+      vowelBtn.innerHTML = "Names starting with a vowel";
+      vowelBtn.style.backgroundColor = "#874A57";
+    } else {
+      renderPokeList(true, false);
+      vowelBtn.innerHTML = "Show all";
+      // vowelBtn.style.backgroundColor = "#874a5799";
+      vowelBtn.style.backgroundColor = "#672634";
+    }
+  }
+
+  const alphabetBtn = document.getElementById("btn-alphabet");
+  alphabetBtn.addEventListener("click", orderAlphabetically);
+  function orderAlphabetically() {
+    if (alphabetBtn.innerHTML != "Put in alphabetical order") {
+      renderPokeList(false, false);
+      alphabetBtn.innerHTML = "Put in alphabetical order";
+      alphabetBtn.style.backgroundColor = "#874A57";
+    }
+    else {
+      renderPokeList(false, true);
+      alphabetBtn.innerHTML = "Regular List";
+      alphabetBtn.style.backgroundColor = "#672634";
+    }
+  }
 }
 
 getPokemon(pokemonApi);

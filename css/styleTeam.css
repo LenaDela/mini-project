@@ -156,6 +156,37 @@ tfoot > tr > td {
   justify-content: center;
 }
 
+.button-poke {
+  padding: 10px;
+  margin: 10px 40px 10px 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 13px;
+  width: 250px;
+  border: 0.5px solid antiquewhite;
+  color: antiquewhite;
+  font-size: 15px;
+  background-color: #874A57;
+}
+
+.text-button {
+  max-width: 150px;
+  font-size: 18px;
+}
+
 .pokecard {
   display: flex;
   flex-flow: column wrap;
@@ -163,11 +194,11 @@ tfoot > tr > td {
   justify-content: flex-start;
   border: 2px solid white;
   border-radius: 13px;
-  width: 350px;
-  height: 500px;
+  width: 250px;
+  height: 400px;
   margin: 50px 0;
   position: relative;
-  background-image: linear-gradient(rgba(231, 231, 243, 0.951), rgba(255, 255, 0, 0.5)), url("../media/pokecolors.jpg");
+  background-image: linear-gradient(rgba(231, 231, 243, 0.953), rgba(255, 255, 0, 0.502)), url("../media/pokecolors.jpg");
 }
 
 .poke-name {

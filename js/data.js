@@ -195,35 +195,35 @@ async function getPokemon(pokemonApi) {
 
   //   return list.sort((a, b) => a.name.localeCompare(b.name));
   // }
-  // console.log(f_sort(pokemons)); 
+  // console.log(f_sort(pokemons));
 
   /************************************** */
 
-  function renderPokeList(filterVowel, filterAlphabet) {
+  function renderPokeList(filterVowel, filterAlphabet, filterLength) {
     const pokeList = document.getElementById("poke-list");
     pokeList.innerHTML = "";
     // added "[].concat()" instead of just "pokemons". Try to understand why
     let filteredPokemon = [].concat(pokemons);
-    // just example, can remove that first if after 
+
     if (filterVowel) {
-      //Phiphi says should write filteredPokemon = filteredPokemon.filter((pokemon))...don't quite get it
-      filteredPokemon = pokemons.filter((pokemon) =>
-        /^[b]/i.test(pokemon.name)
-      );
-    }
-    if (filterVowel) {
-      filteredPokemon = pokemons.filter((pokemon) =>
+      filteredPokemon = filteredPokemon.filter((pokemon) =>
         /^[aeiouy]/i.test(pokemon.name)
       );
-      // ?????
-      // filterAlphabet
     }
 
     if (filterAlphabet) {
-      filteredPokemon = filteredPokemon.sort((a, b) => a.name.localeCompare(b.name));
-        console.log(pokemons);
-        console.log(filteredPokemon);
+      filteredPokemon = filteredPokemon.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      console.log(pokemons);
+      console.log(filteredPokemon);
     }
+
+    if (filterLength) {
+      filteredPokemon = filteredPokemon.filter((pokemon) =>
+        pokemon.name.length <= 5);
+    }
+
     // const filterPokemon = (pokemon) => {
     //   /**if (filterVowel === true), boolean */
     //   if (filterVowel) {
@@ -258,33 +258,69 @@ async function getPokemon(pokemonApi) {
   renderPokeList(false);
 
   const vowelBtn = document.getElementById("btn-vowel");
-  vowelBtn.addEventListener("click", getVowelPoke);
-  function getVowelPoke() {
-    if (vowelBtn.innerHTML != "Names starting with a vowel") {
-      renderPokeList(false, false);
+  const alphabetBtn = document.getElementById("btn-alphabet");
+  const lengthBtn = document.getElementById("btn-five-letters");
+
+  const isVowelFilterActive = () =>
+    vowelBtn.innerHTML !== "Names starting with a vowel";
+  //function isFilteringVowels() {
+  //  return (vowelBtn.innerHTML != "Names starting with a vowel")
+  // }
+  const isAlphabetFilterActive = () =>
+    alphabetBtn.innerHTML !== "Put in alphabetical order";
+
+  const isLengthFilterActive = () =>
+    lengthBtn.innerHTML !== "Names of five letters or less";
+
+  vowelBtn.addEventListener("click", getPokesStartingWithVowel);
+  function getPokesStartingWithVowel() {
+    if (!isVowelFilterActive()) {
+      // if (vowelBtn.innerHTML ===  "Names starting with a vowel") {
+      vowelBtn.innerHTML = "Show all";
+      vowelBtn.style.backgroundColor = "#672634";
+    } else {
+      // vowelBtn.style.backgroundColor = "#874a5799";
       vowelBtn.innerHTML = "Names starting with a vowel";
       vowelBtn.style.backgroundColor = "#874A57";
-    } else {
-      renderPokeList(true, false);
-      vowelBtn.innerHTML = "Show all";
-      // vowelBtn.style.backgroundColor = "#874a5799";
-      vowelBtn.style.backgroundColor = "#672634";
     }
+    renderPokeList(
+      isVowelFilterActive(),
+      isAlphabetFilterActive(),
+      isLengthFilterActive()
+    );
   }
 
-  const alphabetBtn = document.getElementById("btn-alphabet");
   alphabetBtn.addEventListener("click", orderAlphabetically);
   function orderAlphabetically() {
-    if (alphabetBtn.innerHTML != "Put in alphabetical order") {
-      renderPokeList(false, false);
+    if (!isAlphabetFilterActive()) {
+      // if (alphabetBtn.innerHTML === "Put in alphabetical order") {
+      alphabetBtn.innerHTML = "Regular List";
+      alphabetBtn.style.backgroundColor = "#672634";
+    } else {
       alphabetBtn.innerHTML = "Put in alphabetical order";
       alphabetBtn.style.backgroundColor = "#874A57";
     }
-    else {
-      renderPokeList(false, true);
-      alphabetBtn.innerHTML = "Regular List";
-      alphabetBtn.style.backgroundColor = "#672634";
+    renderPokeList(
+      isVowelFilterActive(),
+      isAlphabetFilterActive(),
+      isLengthFilterActive()
+    );
+  }
+
+  lengthBtn.addEventListener("click", getPokesLongerThanSixLetters);
+  function getPokesLongerThanSixLetters() {
+    if (!isLengthFilterActive()) {
+      lengthBtn.innerHTML = "All Pokemon";
+      lengthBtn.style.backgroundColor = "#672634";
+    } else {
+      lengthBtn.innerHTML = "Names of five letters or less";
+      lengthBtn.style.backgroundColor = "#874A57";
     }
+    renderPokeList(
+      isVowelFilterActive(),
+      isAlphabetFilterActive(),
+      isLengthFilterActive()
+    );
   }
 }
 

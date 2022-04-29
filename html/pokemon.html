@@ -1,15 +1,13 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lena's ZOL, suit les rencontres de la team par la jeune stagiaire développeuse Lena chez ZOL. Un petit survol des membres de l'équipe au travers des croisements.">
-    <script src="https://kit.fontawesome.com/cc98416f81.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lena's ZOL, suit les rencontres des Pokémon par la jeune stagiaire développeuse Lena chez ZOL. Un petit survol des Pokémon au travers de divers exercices.">
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/styleTeam.css" />
-    <script src="../js/data.js"></script>
-    <title>Team</title>
+    <script src="../js/pokemon.js"></script>
+    <title>Pokemon</title>
 </head>
 <body class="container-home">
     <header>
@@ -22,6 +20,9 @@
           </div>
           <div class="nav-elements">
             <a href="form.html" title="Nous écrire">CONTACT</a>
+          </div>
+          <div class="nav-elements">
+            <a href="team.html" title="Découvrir l'équipe">TEAM</a>
           </div>
           <div class="nav-elements nav-right">
             <a href="login.html" title="Page de login">LOGIN</a>
@@ -44,36 +45,13 @@
                 <th class="text-center rightcorner">AVATAR</th>
               </tr>
             </thead>
-            <tfoot id="tfoot">
-            <tr class="legend">
-              <td class="title-legend"><h3>Légende</h3></td>
-              <td class="footer-text-center">
-                <div class="flex-center">
-                  <i class="fa-solid fa-check check-icon margin-right"></i>
-                  <p>Oui</p>
-                </div>
-              </td>
-              <td class="footer-text-center">
-                <div class="flex-center">
-                  <i class="fa-solid fa-spinner circle-icon margin-right"></i>
-                  <p>Peut-être</p>
-                </div>
-              </td>
-              <td class="footer-text-center bottom-right-corner">
-                <div class="flex-center">
-                  <i class="fa-solid fa-xmark x-icon margin-right"></i>
-                  <p>Non</p>
-                </div>
-              </td>
-            </tr>
-          </tfoot>
         </table>
         </section>
         <div class="filter-buttons">
           <button class="btn" id="btn-vowel">Names starting with a vowel</button>
           <button class="btn" id="btn-alphabet">Put in alphabetical order</button>
           <button class="btn" id="btn-five-letters">Names of five letters or less</button>
-          <button class="btn" id="btn-replace">Wubba lubba dub dub</button>
+          <button class="btn" id="btn-find-hide">Hide the Pokemon</button>
         </div>
       </main>
       <footer id="footer">

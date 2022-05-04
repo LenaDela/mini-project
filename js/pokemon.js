@@ -22,7 +22,7 @@ async function getPokemon(pokemonApi) {
     filterVowel,
     filterAlphabet,
     filterLength,
-    filterFindHide
+    // filterFindHide
   ) {
     div.innerHTML = "";
     // added "[].concat()" instead of just "pokemons". Try to understand why
@@ -89,13 +89,12 @@ async function getPokemon(pokemonApi) {
   const vowelBtn = document.getElementById("btn-vowel");
   const alphabetBtn = document.getElementById("btn-alphabet");
   const lengthBtn = document.getElementById("btn-five-letters");
-  const findHideBtn = document.getElementById("btn-find-hide").style.visibility="hidden";
+  const findHideBtn = document.getElementById("btn-find-hide");
+  // const findHideBtn = document.getElementById("btn-find-hide").style.visibility="hidden"; that's just hidding the button, which is not what we want
 
   const isVowelFilterActive = () =>
     vowelBtn.innerHTML !== "Names starting with a vowel";
-  //function isFilteringVowels() {
-  //  return (vowelBtn.innerHTML != "Names starting with a vowel")
-  // }
+
   const isAlphabetFilterActive = () =>
     alphabetBtn.innerHTML !== "Put in alphabetical order";
 
@@ -127,7 +126,6 @@ async function getPokemon(pokemonApi) {
   alphabetBtn.addEventListener("click", orderAlphabetically);
   function orderAlphabetically() {
     if (!isAlphabetFilterActive()) {
-      // if (alphabetBtn.innerHTML === "Put in alphabetical order") {
       alphabetBtn.innerHTML = "Regular List";
       alphabetBtn.style.backgroundColor = "#672634";
     } else {
@@ -161,12 +159,14 @@ async function getPokemon(pokemonApi) {
 
   findHideBtn.addEventListener("click", hidePokemon);
   function hidePokemon() {
-    if (!hidePokemon()) {
+    if (!isFindHideFilterActive()) {
       findHideBtn.innerHTML = "Find the Pokemon";
       findHideBtn.style.backgroundColor = "#672634";
+      document.getElementById("poke-list").style.display = "none";
     } else {
       findHideBtn.innerHTML = "Hide the Pokemon";
       findHideBtn.style.backgroundColor = "#874A57";
+      document.getElementById("poke-list").style.display = "flex";
     }
     renderPokeList(
       isVowelFilterActive(),

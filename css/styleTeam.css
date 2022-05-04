@@ -15,6 +15,10 @@ header {
   margin-bottom: 50px;
 }
 
+.select-form {
+  padding: 20px 0;
+}
+
 h1 {
   font-size: 75px;
 }
@@ -283,25 +287,31 @@ tfoot > tr > td {
     box-shadow: none;
   }
 
-  .colleague {
+  .colleague,
+  .character {
     position: relative;
     margin-bottom: 20px;
   }
 
   .firstname,
   .lastname,
-  .role {
+  .role,
+  .name-rick,
+  .status,
+  .species {
     width: calc(80% - 41px);
     border-right: 0.5px;
   }
 
-  .lastname {
+  .lastname,
+  .name-rick {
     border-top-left-radius: 13px;
     border-bottom: 0.5px;
     font-weight: 400;
   }
 
-  .role {
+  .role,
+  .species {
     border-bottom-left-radius: 13px;
     border-top: 0.5px;
     font-style: italic;

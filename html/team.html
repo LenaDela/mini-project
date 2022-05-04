@@ -29,11 +29,20 @@
         </nav>
       </header>
       <main class="content">
+          <div class="align-middle" id="select-top-entry">
+            <label for="entries" class="select-form">Bring to the top</label>
+          </div>
         <section class="intro-section">
             <div class="intro-header">
                 <h1>L'équipe</h1>
             </div>
         </section>
+        <div class="filter-buttons">
+          <button class="btn" id="btn-vowel">Names starting with a vowel</button>
+          <button class="btn" id="btn-alphabet">Put in alphabetical order</button>
+          <button class="btn" id="btn-five-letters">Names of five letters or less</button>
+          <button class="btn" id="btn-replace">Wubba lubba dub dub</button>
+        </div>
         <section class="team-table">
           <table class="table" id="teamTable">
             <thead>
@@ -68,13 +77,17 @@
             </tr>
           </tfoot>
         </table>
+        <table class="table" id="rickTable">
+          <thead>
+            <tr class="table-header">
+              <th class="leftcorner">NOM</th>
+              <th>STATUS</th>
+              <th>ESPÈCE</th>
+              <th class="text-center rightcorner">AVATAR</th>
+            </tr>
+          </thead>
+        </table>
         </section>
-        <div class="filter-buttons">
-          <button class="btn" id="btn-vowel">Names starting with a vowel</button>
-          <button class="btn" id="btn-alphabet">Put in alphabetical order</button>
-          <button class="btn" id="btn-five-letters">Names of five letters or less</button>
-          <button class="btn" id="btn-replace">Wubba lubba dub dub</button>
-        </div>
       </main>
       <footer id="footer">
         <div class="footer">Made with passion in Lyon ©</div>

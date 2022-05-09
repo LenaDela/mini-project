@@ -11,15 +11,17 @@ const isLengthFilterActive = () =>
   document.getElementById("btn-length").innerHTML !== "Names of five letters or less";
 
 const isReplaceFilterActive = () =>
-    document.getElementById("btn-replace").innerHTML !== "Wubba lubba dub dub";
+  document.getElementById("btn-replace").innerHTML !== "Wubba lubba dub dub";
+
+let select = document.createElement("select");
+select.setAttribute("id", "entries");
 
 function renderSelectList(list, attributeName) {
   // console.log("list", list);
   if (document.getElementById("entries")) {
     document.getElementById("entries").remove();
   }
-  let select = document.createElement("select");
-  select.setAttribute("id", "entries");
+  
   document.getElementById("select-top-entry").appendChild(select);
 
   list.map((item) => {
@@ -30,13 +32,43 @@ function renderSelectList(list, attributeName) {
 
     option.className = "";
   });
+
+  select.addEventListener("change", () => selectWho(list, attributeName, select));
 }
+
+// select.addEventListener("change", selectWho); // other way= of writing it
+/** @param  {Array.<object>} list */
+function selectWho(list, attributeName, select) {
+  console.log("select.value", select.value);
+  console.log("select", select);
+  const topUser = list.find((listItem) => {
+    if (listItem[attributeName] === select.value) {
+      return true;
+    } return false;
+  });
+  const filteredList = list.filter((item) =>  {
+    if (item[attributeName] === select.value) {
+      return false;
+    } return true;
+  });
+  console.log("topUser", topUser);
+  console.log("filteredList", filteredList);
+  renderUserList({users:[topUser].concat(filteredList)})
+  // renderUserList({users:[topUser, ...filteredList]})
+}
+
+// function renderSelectedUser({users, selectUser}) {
+//   if (selectUser) {
+//     filteredUsers = filteredUsers.filter((user)) =>
+
+//   }
+// }
 
 function renderUserList({users, filterVowel, filterAlphabet, filterLength}) {
   // console.log("users", users);
   const tbody = document.getElementById("user-list");
   tbody.innerHTML = "";
-  console.log("filters", filterVowel, filterAlphabet, filterLength);
+  // console.log("filters", filterVowel, filterAlphabet, filterLength);
   let filteredUsers = [].concat(users);
 
   if (filterVowel) {
@@ -228,13 +260,13 @@ const replaceBtn = document.getElementById("btn-replace");
   if (!isReplaceFilterActive()) {
     replaceBtn.innerHTML = "Previous Data";
     replaceBtn.style.backgroundColor = "#672634";
-    renderSelectList(characters, "name");
+       (characters, "name");
     document.getElementById("teamTable").style.display = "none";
-    document.getElementById("rickTable").style.display = "block";
+    document.getElementById("rickTable").style.display = null; // would be "table" otherwise, but null is safer, prevents mistakes
   } else {
     replaceBtn.innerHTML = "Wubba lubba dub dub";
     replaceBtn.style.backgroundColor = "#874A57";
-    document.getElementById("teamTable").style.display = "block";
+    document.getElementById("teamTable").style.display = null;
     document.getElementById("rickTable").style.display = "none";
     renderSelectList(users, "last_name");
   }
@@ -280,11 +312,9 @@ async function getDataFromApi(URL, rickAndMortyApi) {
   alphabetBtn.addEventListener("click", () => orderAlphabetically({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderUserList:renderUserList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
 
   lengthBtn.addEventListener("click", () => getUsersShorterThanFiveLetters({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderUserList:renderUserList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
- 
 
   replaceBtn.addEventListener("click", () => replaceDataInTable(characters, users));
   
-
   renderSelectList(users, "last_name"); ///???? why is it working, even though not writing "name"??
 }
 

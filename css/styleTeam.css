@@ -15,6 +15,48 @@ header {
   margin-bottom: 50px;
 }
 
+.select-styling {
+  appearance: none;
+  position: relative;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border-color: #874A57;
+  padding: 12px 20px;
+  width: 200px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  color: #874A57;
+  outline-color: #874A57;
+}
+
+.select-arrow {
+  position: relative;
+}
+
+.select-arrow::after {
+  position: absolute;
+  content: "\03BD";
+  color: #874A57;
+  top: 10px;
+  right: 10px;
+  pointer-events: none;
+}
+
+/* .select-styling::after {
+  content: '\f078';
+  font: normal normal normal 17px/1 FontAwesome;
+  color: #0ebeff;
+  right: 11px;
+  top: 6px;
+  height: 34px;
+  padding: 15px 0px 0px 8px;
+  border-left: 1px solid #0ebeff;
+  position: absolute;
+  pointer-events: none;
+} */
+
 .select-form {
   padding: 20px 0;
 }

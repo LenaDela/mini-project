@@ -13,34 +13,28 @@ const isLengthFilterActive = () =>
 const isReplaceFilterActive = () =>
   document.getElementById("btn-replace").innerHTML !== "Wubba lubba dub dub";
 
-let select = document.createElement("select");
-select.setAttribute("id", "entries");
 
 function renderSelectList(list, attributeName) {
-  // console.log("list", list);
-  if (document.getElementById("entries")) {
-    document.getElementById("entries").remove();
-  }
   
-  document.getElementById("select-top-entry").appendChild(select);
+  const select = document.getElementById("entries");
+  while (select.firstChild) {
+    select.removeChild(select.firstChild);
+  }
 
   list.map((item) => {
     let option = document.createElement("option");
     select.appendChild(option);
 
     option.innerHTML = item[attributeName];
-
-    option.className = "";
   });
 
-  select.addEventListener("change", () => selectWho(list, attributeName, select));
+  // select.addEventListener("change", selectWho); // other way= of writing it
 }
 
-// select.addEventListener("change", selectWho); // other way= of writing it
 /** @param  {Array.<object>} list */
 function selectWho(list, attributeName, select) {
-  console.log("select.value", select.value);
-  console.log("select", select);
+  console.log("attibuteName", attributeName);
+  
   const topUser = list.find((listItem) => {
     if (listItem[attributeName] === select.value) {
       return true;
@@ -53,16 +47,12 @@ function selectWho(list, attributeName, select) {
   });
   console.log("topUser", topUser);
   console.log("filteredList", filteredList);
-  renderUserList({users:[topUser].concat(filteredList)})
+  if (attributeName === "last_name") {
+    return renderUserList({users:[topUser].concat(filteredList)});
+  } 
+  return renderCharacterList({characters:[topUser].concat(filteredList)});
   // renderUserList({users:[topUser, ...filteredList]})
 }
-
-// function renderSelectedUser({users, selectUser}) {
-//   if (selectUser) {
-//     filteredUsers = filteredUsers.filter((user)) =>
-
-//   }
-// }
 
 function renderUserList({users, filterVowel, filterAlphabet, filterLength}) {
   // console.log("users", users);
@@ -184,6 +174,11 @@ function renderCharacterList({characters, filterVowel, filterAlphabet, filterLen
   });
 }
   
+function isUserListVisible() {
+  const table = document.getElementById("teamTable");
+  return table.style.display !== "none";
+}
+
 function getUsersStartingWithVowel({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderUserList, renderCharacterList, vowelBtn}) {
                             
   // console.log("isVowelFilterActive", isVowelFilterActive());
@@ -263,6 +258,7 @@ const replaceBtn = document.getElementById("btn-replace");
        (characters, "name");
     document.getElementById("teamTable").style.display = "none";
     document.getElementById("rickTable").style.display = null; // would be "table" otherwise, but null is safer, prevents mistakes
+    renderSelectList(characters, "name");
   } else {
     replaceBtn.innerHTML = "Wubba lubba dub dub";
     replaceBtn.style.backgroundColor = "#874A57";
@@ -306,6 +302,7 @@ async function getDataFromApi(URL, rickAndMortyApi) {
   const lengthBtn = document.getElementById("btn-length");
   const replaceBtn = document.getElementById("btn-replace");
   
+  document.getElementById("entries").addEventListener("change", () => selectWho(isUserListVisible()? users : characters, isUserListVisible()? "last_name" : "name", document.getElementById("entries")));
 
   vowelBtn.addEventListener("click", () => getUsersStartingWithVowel({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderUserList:renderUserList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
 

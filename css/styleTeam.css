@@ -37,25 +37,12 @@ header {
 
 .select-arrow::after {
   position: absolute;
-  content: "\03BD";
+  content: "\0076";
   color: #874A57;
   top: 10px;
-  right: 10px;
+  right: 20px;
   pointer-events: none;
 }
-
-/* .select-styling::after {
-  content: '\f078';
-  font: normal normal normal 17px/1 FontAwesome;
-  color: #0ebeff;
-  right: 11px;
-  top: 6px;
-  height: 34px;
-  padding: 15px 0px 0px 8px;
-  border-left: 1px solid #0ebeff;
-  position: absolute;
-  pointer-events: none;
-} */
 
 .select-form {
   padding: 20px 0;
@@ -280,7 +267,7 @@ tfoot > tr > td {
     font-size: 21px;
     text-align: center;
   }
-  
+
   .table {
     max-width: 1200px;
   }
@@ -327,8 +314,6 @@ tfoot > tr > td {
   }
 
   table {
-    /* width: 100%;
-    display: flex; */
     flex-direction: column;
     align-items: center;
     justify-content: center;

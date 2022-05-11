@@ -14,7 +14,7 @@ const isReplaceFilterActive = () =>
   document.getElementById("btn-replace").innerHTML !== "Wubba lubba dub dub";
 
 
-function renderSelectList(list, attributeName) {
+function renderSelectList(list) {
   
   const select = document.getElementById("entries");
   while (select.firstChild) {
@@ -25,65 +25,52 @@ function renderSelectList(list, attributeName) {
     let option = document.createElement("option");
     select.appendChild(option);
 
-    option.innerHTML = item[attributeName];
+    option.innerHTML = item.name;
   });
-
-  // select.addEventListener("change", selectWho); // other way= of writing it
 }
 
-/** @param  {Array.<object>} list */
-function selectWho(list, attributeName, select) {
+  function reorderList(list, attributeName) {
   console.log("attibuteName", attributeName);
   
-  const topUser = list.find((listItem) => {
-    if (listItem[attributeName] === select.value) {
-      return true;
-    } return false;
-  });
-  const filteredList = list.filter((item) =>  {
-    if (item[attributeName] === select.value) {
-      return false;
-    } return true;
-  });
+  const select = document.getElementById("entries");
+  const topUser = list.find((listItem) => listItem[attributeName] === select.value);
+  const filteredList = list.filter((item) => item[attributeName] !== select.value);
+
   console.log("topUser", topUser);
   console.log("filteredList", filteredList);
   if (attributeName === "last_name") {
-    return renderUserList({users:[topUser].concat(filteredList)});
+    return renderList({users: [topUser].concat(filteredList)});
+    // renderList({users:[topUser, ...filteredList]})
   } 
-  return renderCharacterList({characters:[topUser].concat(filteredList)});
-  // renderUserList({users:[topUser, ...filteredList]})
+  return renderCharacterList({characters: [topUser].concat(filteredList)});
 }
 
-function renderUserList({users, filterVowel, filterAlphabet, filterLength}) {
+function renderList({listToRender, filterVowel, filterAlphabet, filterLength, bodyId}) {
   // console.log("users", users);
-  const tbody = document.getElementById("user-list");
+  const tbody = document.getElementById(bodyId);
   tbody.innerHTML = "";
+  let filteredListToRender = [].concat(listToRender);
   // console.log("filters", filterVowel, filterAlphabet, filterLength);
-  let filteredUsers = [].concat(users);
 
   if (filterVowel) {
-    filteredUsers = filteredUsers.filter((user) =>
-      /^[aeiouy]/i.test(user.first_name)
+    filteredListToRender = filteredListToRender.filter((listItem) =>
+      /^[aeiouy]/i.test(listItem.name)
     );
   }
 
   if (filterAlphabet) {
-    filteredUsers = filteredUsers.sort((a, b) =>
-      a.last_name.localeCompare(b.last_name)
+    filteredListToRender = filteredListToRender.sort((a, b) =>
+      a.name.localeCompare(b.name)
     );
-    // console.log(users);
-    // console.log(filteredUsers);
   }
 
   if (filterLength) {
-    filteredUsers = filteredUsers.filter(
-      (user) => user?.last_name?.length <= 4
+    filteredListToRender = filteredListToRender.filter(
+      (listItem) => listItem?.name?.length <= 4
     );
-    // console.log(users);
-    // console.log(filteredUsers);
   }
-
-  filteredUsers.map((user) => {
+console.log("filteredListToRender", filteredListToRender, listToRender);
+  filteredListToRender.map((listItem) => {
     let tr = document.createElement("tr");
     let td = document.createElement("td");
     let td2 = document.createElement("td");
@@ -92,16 +79,16 @@ function renderUserList({users, filterVowel, filterAlphabet, filterLength}) {
     let div = document.createElement("div");
 
     let img = new Image(); // It is functionally equivalent to document.createElement('img').
-    img.src = user.avatar;
+    img.src = listItem.image;
 
     tbody.appendChild(tr);
     tr.appendChild(td);
     tr.appendChild(td2);
     tr.appendChild(td3);
     tr.appendChild(td4);
-    td.innerHTML = user.last_name;
-    td2.innerHTML = user.first_name;
-    td3.innerHTML = user.email;
+    td.innerHTML = listItem.name;
+    td2.innerHTML = listItem.first_name;
+    td3.innerHTML = listItem.contact;
     td4.appendChild(div);
     div.appendChild(img);
 
@@ -112,66 +99,7 @@ function renderUserList({users, filterVowel, filterAlphabet, filterLength}) {
     td4.className = "image-container";
     div.className = "styling-image";
   });
-}
 
-function renderCharacterList({characters, filterVowel, filterAlphabet, filterLength}) {
-  // console.log("filterVowel", filterVowel);
-  const tbodyRick = document.getElementById("character-list");
-  tbodyRick.innerHTML = "";
-  let filteredCharacters = [].concat(characters);
-  // console.log("characters", characters);
-
-  if (filterVowel) {
-    filteredCharacters = filteredCharacters.filter((character) =>
-      /^[aeiouy]/i.test(character.name)
-    );
-  }
-
-  if (filterAlphabet) {
-    filteredCharacters = filteredCharacters.sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
-    // console.log("characters", characters);
-    // console.log("filtered characters", filteredCharacters);
-  }
-
-  if (filterLength) {
-    filteredCharacters = filteredCharacters.filter(
-      (character) => character.name.length <= 5
-    );
-    // console.log("characters", characters);
-    // console.log("filtered characters", filteredCharacters);
-  }
-
-  filteredCharacters.map((character) => {
-    let tr = document.createElement("tr");
-    let td = document.createElement("td");
-    let td2 = document.createElement("td");
-    let td3 = document.createElement("td");
-    let td4 = document.createElement("td");
-    let div = document.createElement("div");
-
-    let img = new Image(); // It is functionally equivalent to document.createElement('img').
-    img.src = character.image;
- 
-    tbodyRick.appendChild(tr);
-    tr.appendChild(td);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    tr.appendChild(td4);
-    td.innerHTML = character.name;
-    td2.innerHTML = character.status;
-    td3.innerHTML = character.species;
-    td4.appendChild(div);
-    div.appendChild(img);
-
-    tr.className = "character";
-    td.className = "name-rick";
-    td2.className = "status";
-    td3.className = "species";
-    td4.className = "image-container";
-    div.className = "styling-image";
-  });
 }
   
 function isUserListVisible() {
@@ -179,7 +107,8 @@ function isUserListVisible() {
   return table.style.display !== "none";
 }
 
-function getUsersStartingWithVowel({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderUserList, renderCharacterList, vowelBtn}) {
+
+function getUsersStartingWithVowel({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderList, vowelBtn}) {
                             
   // console.log("isVowelFilterActive", isVowelFilterActive());
   if (!isVowelFilterActive()) {
@@ -191,22 +120,16 @@ function getUsersStartingWithVowel({users, characters, isVowelFilterActive, isAl
   }
   // console.log("isVowelFilterActiveAfter", isVowelFilterActive());
 
-  renderUserList({
-    users:users,
+  renderList({
+    users:users, /* + characters:characters??? */
     filterVowel:isVowelFilterActive(),
     filterAlphabet:isAlphabetFilterActive(),
     filterLength:isLengthFilterActive()
   });
   console.log("isLengthFilerActive", isLengthFilterActive());
-  renderCharacterList({
-    characters:characters,
-    filterVowel:isVowelFilterActive(),
-    filterAlphabet:isAlphabetFilterActive(),
-    filterLength:isLengthFilterActive()
-  });
 }
 
-function orderAlphabetically({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderUserList, renderCharacterList, alphabetBtn }) {
+function orderAlphabetically({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderList, renderCharacterList, alphabetBtn }) {
   if (!isAlphabetFilterActive(alphabetBtn)) {
     alphabetBtn.innerHTML = "Regular List";
     alphabetBtn.style.backgroundColor = "#672634";
@@ -214,21 +137,15 @@ function orderAlphabetically({users, characters, isVowelFilterActive, isAlphabet
     alphabetBtn.innerHTML = "Put in alphabetical order";
     alphabetBtn.style.backgroundColor = "#874A57";
   }
-  renderUserList({
-    users:users,
-    filterVowel:isVowelFilterActive(),
-    filterAlphabet:isAlphabetFilterActive(),
-    filterLength:isLengthFilterActive(),
-  });
-  renderCharacterList({
-    characters:characters,
+  renderList({
+    users:users, /* + characters:characters??? */
     filterVowel:isVowelFilterActive(),
     filterAlphabet:isAlphabetFilterActive(),
     filterLength:isLengthFilterActive(),
   });
 }
 
-function getUsersShorterThanFiveLetters({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderUserList, renderCharacterList, lengthBtn }) {
+function getUsersShorterThanFiveLetters({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderList, renderCharacterList, lengthBtn }) {
   if (!isLengthFilterActive(lengthBtn)) {
     lengthBtn.innerHTML = "All The Entries";
     lengthBtn.style.backgroundColor = "#672634";
@@ -236,14 +153,8 @@ function getUsersShorterThanFiveLetters({users, characters, isVowelFilterActive,
     lengthBtn.innerHTML = "Names of five letters or less";
     lengthBtn.style.backgroundColor = "#874A57";
   }
-  renderUserList({
-    users:users,
-    filterVowel:isVowelFilterActive(),
-    filterAlphabet:isAlphabetFilterActive(),
-    filterLength:isLengthFilterActive(),
-  });
-  renderCharacterList({
-    characters:characters,
+  renderList({
+    users:users, /* + characters:characters??? */
     filterVowel:isVowelFilterActive(),
     filterAlphabet:isAlphabetFilterActive(),
     filterLength:isLengthFilterActive(),
@@ -286,29 +197,39 @@ async function getDataFromApi(URL, rickAndMortyApi) {
   console.log(document.getElementById("rickTable"));
   document.getElementById("rickTable").appendChild(tbodyRick);
   
-  let users = resultUser.data;
-  let characters = resultRick.results;
+  let users = resultUser.data.map((user) => ({...user, name: user.last_name, image: user.avatar, contact: user.email}) );
+  console.log("users", users);
+  let characters = resultRick.results.map((character) => {
+    const splittedName = character.name.split(' ');
+    return ({...character, first_name: splittedName[0], name: splittedName[splittedName.length - 1], contact: character.location.name 
+  })});
+  console.log("characters", characters);
   // console.log("users", users);
   // console.log("characters", characters);
   // console.log("results", resultRick);
 
-  
-  renderUserList({users:users, filterVowel:false, filterAlphabet:false, filterLength:false});
+  //renderList({users:users, characters:characters,?????? filterVowel:false, filterAlphabet:false, filterLength:false});
 
-  renderCharacterList({characters:characters, filterVowel:false, filterAlphabet:false, filterLength:false});
+  renderList({listToRender:users, filterVowel:false, filterAlphabet:false, filterLength:false, bodyId: "user-list"});
+  renderList({listToRender:characters, filterVowel:false, filterAlphabet:false, filterLength:false, bodyId: "character-list"});
+
+  // renderCharacterList({listToRender:characters, filterVowel:false, filterAlphabet:false, filterLength:false});
 
   const vowelBtn = document.getElementById("btn-vowel");
   const alphabetBtn = document.getElementById("btn-alphabet");
   const lengthBtn = document.getElementById("btn-length");
   const replaceBtn = document.getElementById("btn-replace");
-  
-  document.getElementById("entries").addEventListener("change", () => selectWho(isUserListVisible()? users : characters, isUserListVisible()? "last_name" : "name", document.getElementById("entries")));
+  const select =  document.getElementById("entries");
 
-  vowelBtn.addEventListener("click", () => getUsersStartingWithVowel({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderUserList:renderUserList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
+  // select.addEventListener("change", reorderList); // other way= of writing the function
+  select.addEventListener("change", () => reorderList(isUserListVisible()? users : characters, isUserListVisible()? "last_name" : "name"));
 
-  alphabetBtn.addEventListener("click", () => orderAlphabetically({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderUserList:renderUserList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
+  vowelBtn.addEventListener("click", () => getUsersStartingWithVowel({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderList:renderList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
 
-  lengthBtn.addEventListener("click", () => getUsersShorterThanFiveLetters({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderUserList:renderUserList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
+  alphabetBtn.addEventListener("click", () => orderAlphabetically({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderList:renderList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
+
+
+  lengthBtn.addEventListener("click", () => getUsersShorterThanFiveLetters({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderList:renderList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
 
   replaceBtn.addEventListener("click", () => replaceDataInTable(characters, users));
   

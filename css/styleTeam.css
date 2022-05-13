@@ -324,30 +324,27 @@ tfoot > tr > td {
     box-shadow: none;
   }
 
-  .colleague,
-  .character {
+  .individual {
     position: relative;
     margin-bottom: 20px;
   }
 
   .firstname,
   .lastname,
-  .role,
-  .name-rick,
+  .info-on-individual,
   .status,
   .species {
     width: calc(80% - 41px);
     border-right: 0.5px;
   }
 
-  .lastname,
-  .name-rick {
+  .lastname {
     border-top-left-radius: 13px;
     border-bottom: 0.5px;
     font-weight: 400;
   }
 
-  .role,
+  .info-on-individual,
   .species {
     border-bottom-left-radius: 13px;
     border-top: 0.5px;
@@ -358,7 +355,7 @@ tfoot > tr > td {
     position: absolute;
     width: 20%;
     height: calc(100% - 2px);
-    top: 0;
+    top: 0.5px;
     right: 0;
     border-top-right-radius: 13px;
     border-bottom-right-radius: 13px;
@@ -439,7 +436,7 @@ tfoot > tr > td {
     justify-content: center;
   }
 
-  .role {
+  .info-on-individual {
     text-overflow: ellipsis;
     overflow: hidden;
   }

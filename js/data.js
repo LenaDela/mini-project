@@ -1,5 +1,5 @@
-const rickAndMortyApi = "https://rickandmortyapi.com/api/character";
 const URL = "https://reqres.in/api/users?page=1";
+const rickAndMortyApi = "https://rickandmortyapi.com/api/character";
 
 const isVowelFilterActive = () =>
   document.getElementById("btn-vowel").innerHTML !== "Names starting with a vowel";
@@ -29,77 +29,78 @@ function renderSelectList(list) {
   });
 }
 
-  function reorderList(list, attributeName) {
-  console.log("attibuteName", attributeName);
+  function reorderList(list) {
+    getUsersStartingWithVowel({listToRender:list, isVowelFilterActive : true});
+    orderAlphabetically({listToRender:list, isAlphabetFilterActive : true});getUsersShorterThanFiveLetters({listToRender:list, isLengthFilterActive : true});
   
   const select = document.getElementById("entries");
-  const topUser = list.find((listItem) => listItem[attributeName] === select.value);
-  const filteredList = list.filter((item) => item[attributeName] !== select.value);
+  const topUser = list.find((listItem) => listItem.name === select.value);
+  const filteredList = list.filter((item) => item.name !== select.value);
+
 
   console.log("topUser", topUser);
   console.log("filteredList", filteredList);
-  if (attributeName === "last_name") {
-    return renderList({users: [topUser].concat(filteredList)});
-    // renderList({users:[topUser, ...filteredList]})
-  } 
-  return renderCharacterList({characters: [topUser].concat(filteredList)});
+ 
+  return renderList({listToRender: topUser? [topUser].concat(filteredList) : list, bodyId: isUserListVisible()? "user-list" : "character-list"});
 }
 
-function renderList({listToRender, filterVowel, filterAlphabet, filterLength, bodyId}) {
-  // console.log("users", users);
+function renderList({listToRender, bodyId}) {
   const tbody = document.getElementById(bodyId);
+  console.log("bodyId", bodyId);
   tbody.innerHTML = "";
-  let filteredListToRender = [].concat(listToRender);
-  // console.log("filters", filterVowel, filterAlphabet, filterLength);
 
-  if (filterVowel) {
+  let filteredListToRender = [].concat(listToRender); // you make a copy first
+  // console.log("filters", filterVowel, filterAlphabet, filterLength);
+  console.log("filteredListToRender", filteredListToRender);
+
+  if (isVowelFilterActive()) {
     filteredListToRender = filteredListToRender.filter((listItem) =>
       /^[aeiouy]/i.test(listItem.name)
     );
   }
 
-  if (filterAlphabet) {
+  if (isAlphabetFilterActive()) {
     filteredListToRender = filteredListToRender.sort((a, b) =>
       a.name.localeCompare(b.name)
     );
   }
 
-  if (filterLength) {
+  if (isLengthFilterActive()) {
     filteredListToRender = filteredListToRender.filter(
       (listItem) => listItem?.name?.length <= 4
     );
   }
-console.log("filteredListToRender", filteredListToRender, listToRender);
+
   filteredListToRender.map((listItem) => {
-    let tr = document.createElement("tr");
-    let td = document.createElement("td");
-    let td2 = document.createElement("td");
-    let td3 = document.createElement("td");
-    let td4 = document.createElement("td");
+    let individual = document.createElement("tr");
+    let lastname = document.createElement("td");
+    let firstname = document.createElement("td");
+    let infoOnIndividual = document.createElement("td");
+    let imageContainer = document.createElement("td");
     let div = document.createElement("div");
 
     let img = new Image(); // It is functionally equivalent to document.createElement('img').
     img.src = listItem.image;
+    img.alt = "Photo or image of individuals";
 
-    tbody.appendChild(tr);
-    tr.appendChild(td);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    tr.appendChild(td4);
-    td.innerHTML = listItem.name;
-    td2.innerHTML = listItem.first_name;
-    td3.innerHTML = listItem.contact;
-    td4.appendChild(div);
+    tbody.appendChild(individual);
+    individual.appendChild(lastname);
+    individual.appendChild(firstname);
+    individual.appendChild(infoOnIndividual);
+    individual.appendChild(imageContainer);
+    lastname.innerHTML = listItem.name;
+    firstname.innerHTML = listItem.first_name;
+    infoOnIndividual.innerHTML = listItem.contact;
+    imageContainer.appendChild(div);
     div.appendChild(img);
 
-    tr.className = "colleague";
-    td.className = "lastname";
-    td2.className = "firstname";
-    td3.className = "role";
-    td4.className = "image-container";
+    individual.className = "individual";
+    lastname.className = "lastname";
+    firstname.className = "firstname";
+    infoOnIndividual.className = "info-on-individual";
+    imageContainer.className = "image-container";
     div.className = "styling-image";
   });
-
 }
   
 function isUserListVisible() {
@@ -107,11 +108,10 @@ function isUserListVisible() {
   return table.style.display !== "none";
 }
 
-
-function getUsersStartingWithVowel({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderList, vowelBtn}) {
-                            
+function getUsersStartingWithVowel({listToRender, isVowelFilterActive}) {
+  const vowelBtn = document.getElementById("btn-vowel");                   
   // console.log("isVowelFilterActive", isVowelFilterActive());
-  if (!isVowelFilterActive()) {
+  if (!isVowelFilterActive) {
     vowelBtn.innerHTML = "Show all";
     vowelBtn.style.backgroundColor = "#672634";
   } else {
@@ -119,18 +119,15 @@ function getUsersStartingWithVowel({users, characters, isVowelFilterActive, isAl
     vowelBtn.style.backgroundColor = "#874A57";
   }
   // console.log("isVowelFilterActiveAfter", isVowelFilterActive());
-
   renderList({
-    users:users, /* + characters:characters??? */
-    filterVowel:isVowelFilterActive(),
-    filterAlphabet:isAlphabetFilterActive(),
-    filterLength:isLengthFilterActive()
+    listToRender:listToRender,
+    bodyId: isUserListVisible()? "user-list" : "character-list"
   });
-  console.log("isLengthFilerActive", isLengthFilterActive());
 }
 
-function orderAlphabetically({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderList, renderCharacterList, alphabetBtn }) {
-  if (!isAlphabetFilterActive(alphabetBtn)) {
+function orderAlphabetically({listToRender, isAlphabetFilterActive }) {
+  const alphabetBtn = document.getElementById("btn-alphabet");
+  if (!isAlphabetFilterActive) {
     alphabetBtn.innerHTML = "Regular List";
     alphabetBtn.style.backgroundColor = "#672634";
   } else {
@@ -138,15 +135,14 @@ function orderAlphabetically({users, characters, isVowelFilterActive, isAlphabet
     alphabetBtn.style.backgroundColor = "#874A57";
   }
   renderList({
-    users:users, /* + characters:characters??? */
-    filterVowel:isVowelFilterActive(),
-    filterAlphabet:isAlphabetFilterActive(),
-    filterLength:isLengthFilterActive(),
+    listToRender:listToRender,
+    bodyId: isUserListVisible()? "user-list" : "character-list"
   });
 }
 
-function getUsersShorterThanFiveLetters({users, characters, isVowelFilterActive, isAlphabetFilterActive, isLengthFilterActive, renderList, renderCharacterList, lengthBtn }) {
-  if (!isLengthFilterActive(lengthBtn)) {
+function getUsersShorterThanFiveLetters({listToRender, isLengthFilterActive }) {
+  const lengthBtn = document.getElementById("btn-length");
+  if (!isLengthFilterActive) {
     lengthBtn.innerHTML = "All The Entries";
     lengthBtn.style.backgroundColor = "#672634";
   } else {
@@ -154,31 +150,27 @@ function getUsersShorterThanFiveLetters({users, characters, isVowelFilterActive,
     lengthBtn.style.backgroundColor = "#874A57";
   }
   renderList({
-    users:users, /* + characters:characters??? */
-    filterVowel:isVowelFilterActive(),
-    filterAlphabet:isAlphabetFilterActive(),
-    filterLength:isLengthFilterActive(),
+    listToRender:listToRender,
+    bodyId: isUserListVisible()? "user-list" : "character-list"
   });
 }
 
-function replaceDataInTable(characters, users) {
+function replaceDataInTable({users, characters}) {
 const replaceBtn = document.getElementById("btn-replace");
   if (!isReplaceFilterActive()) {
     replaceBtn.innerHTML = "Previous Data";
     replaceBtn.style.backgroundColor = "#672634";
-       (characters, "name");
     document.getElementById("teamTable").style.display = "none";
-    document.getElementById("rickTable").style.display = null; // would be "table" otherwise, but null is safer, prevents mistakes
-    renderSelectList(characters, "name");
+    document.getElementById("rickTable").style.display = null; // would be "table" otherwise, but null is safer, prevents mistakes. Null makes it go back to its initial state ----> need to review this, not sure I'm getting it
+    renderSelectList(characters);
   } else {
     replaceBtn.innerHTML = "Wubba lubba dub dub";
     replaceBtn.style.backgroundColor = "#874A57";
     document.getElementById("teamTable").style.display = null;
     document.getElementById("rickTable").style.display = "none";
-    renderSelectList(users, "last_name");
+    renderSelectList(users);
   }
 }
-
 
 async function getDataFromApi(URL, rickAndMortyApi) {
   const responseUser = await fetch(URL); // by default it's GET
@@ -194,26 +186,19 @@ async function getDataFromApi(URL, rickAndMortyApi) {
   let tfoot = document.getElementById("tfoot");
 
   tfoot.parentNode.insertBefore(tbody, tfoot); // inserts tbody before tfoot in table
-  console.log(document.getElementById("rickTable"));
   document.getElementById("rickTable").appendChild(tbodyRick);
   
-  let users = resultUser.data.map((user) => ({...user, name: user.last_name, image: user.avatar, contact: user.email}) );
+  let users = resultUser.data.map((user) => ({...user, name: user.last_name, image: user.avatar, contact: user.email}) ); // ...user  (spread)
   console.log("users", users);
   let characters = resultRick.results.map((character) => {
     const splittedName = character.name.split(' ');
     return ({...character, first_name: splittedName[0], name: splittedName[splittedName.length - 1], contact: character.location.name 
   })});
   console.log("characters", characters);
-  // console.log("users", users);
-  // console.log("characters", characters);
-  // console.log("results", resultRick);
 
-  //renderList({users:users, characters:characters,?????? filterVowel:false, filterAlphabet:false, filterLength:false});
-
-  renderList({listToRender:users, filterVowel:false, filterAlphabet:false, filterLength:false, bodyId: "user-list"});
-  renderList({listToRender:characters, filterVowel:false, filterAlphabet:false, filterLength:false, bodyId: "character-list"});
-
-  // renderCharacterList({listToRender:characters, filterVowel:false, filterAlphabet:false, filterLength:false});
+  //executed on first load
+  renderList({listToRender:users, bodyId: "user-list"});
+  renderList({listToRender:characters, bodyId: "character-list"});
 
   const vowelBtn = document.getElementById("btn-vowel");
   const alphabetBtn = document.getElementById("btn-alphabet");
@@ -224,16 +209,15 @@ async function getDataFromApi(URL, rickAndMortyApi) {
   // select.addEventListener("change", reorderList); // other way= of writing the function
   select.addEventListener("change", () => reorderList(isUserListVisible()? users : characters, isUserListVisible()? "last_name" : "name"));
 
-  vowelBtn.addEventListener("click", () => getUsersStartingWithVowel({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderList:renderList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
+  vowelBtn.addEventListener("click", () => getUsersStartingWithVowel({listToRender:isUserListVisible()? users : characters, renderList:renderList,isVowelFilterActive:isVowelFilterActive()}));
 
-  alphabetBtn.addEventListener("click", () => orderAlphabetically({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderList:renderList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
+  alphabetBtn.addEventListener("click", () => orderAlphabetically({listToRender:isUserListVisible()? users : characters, renderList:renderList, isAlphabetFilterActive:isAlphabetFilterActive()}));
 
+  lengthBtn.addEventListener("click", () => getUsersShorterThanFiveLetters({listToRender:isUserListVisible()? users : characters, renderList:renderList, isLengthFilterActive:isLengthFilterActive()}));
 
-  lengthBtn.addEventListener("click", () => getUsersShorterThanFiveLetters({users:users, characters:characters, vowelBtn:vowelBtn, alphabetBtn:alphabetBtn, lengthBtn:lengthBtn, replaceBtn:replaceBtn, renderList:renderList, renderCharacterList:renderCharacterList, isVowelFilterActive:isVowelFilterActive, isAlphabetFilterActive:isAlphabetFilterActive, isLengthFilterActive:isLengthFilterActive, isReplaceFilterActive:isReplaceFilterActive}));
-
-  replaceBtn.addEventListener("click", () => replaceDataInTable(characters, users));
+  replaceBtn.addEventListener("click", () => replaceDataInTable({characters, users}));
   
-  renderSelectList(users, "last_name"); ///???? why is it working, even though not writing "name"??
+  renderSelectList(users); ///???? why is it working, even though not writing "name"??
 }
 
 getDataFromApi(URL, rickAndMortyApi);

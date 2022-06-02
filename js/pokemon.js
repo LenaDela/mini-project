@@ -2,10 +2,10 @@
 const pokemonApi = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
 async function getPokemon(pokemonApi) {
-  const response = await fetch(pokemonApi);
+  const response = await axios.get(pokemonApi);
   console.log(response);
 
-  let result = await response.json();
+  let result = response;
   console.log(result);
 
   let footer = document.getElementById("footer");

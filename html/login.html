@@ -7,8 +7,10 @@
     <meta name="description" content="Lena's ZOL, login page.">
     <script src="https://kit.fontawesome.com/cc98416f81.js" crossorigin="anonymous"></script>
     <script src="../js/toggleIcon.js"></script>
+    <script src="../js/login.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/styleLogin.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js"></script>
     <title>Login</title>
 </head>
 <body class="container-home">
@@ -34,14 +36,20 @@
             <h1>Login</h1>
           </div>
         </section>
+        <section class="message" id="message">
+          <div class="error-message" id="error-message">
+            <p class="specific-error" id="specific-error">AUTHENTIFIEZ-VOUS</p>
+          </div>
+        </section>
         <section class="form">
-          <form method="POST" action="iDoNotExist.php">
+          <form id="loginForm"> 
               <div class="user">
                 <div class="spread">
                     <label class="fixed-size" for="email">Email</label>
                     <div class="relative">
                       <div class="opacity"></div>
-                      <input class="added-padding-width input-styling" type="email" id="email" name="email" placeholder="lena@dela.com" required>
+                      <input class="added-padding-width input-styling" type="email" id="email" name="email" value="" placeholder="lena@dela.com" required>
+                      <!-- <small></small> -->
                     </div>
                 </div>
                 <div class="spread">
@@ -50,6 +58,7 @@
                     <div class="opacity"></div>
                       <input class="added-padding-width input-styling" type="password" id="password" name="password" placeholder="Mot de passe" required>
                       <span class="eye-icon" id="toggleIcon" onclick="changeIcon()"><i class="fa-solid fa-eye" id="icon"></i></span>
+                      <!-- <small></small> -->
                   </div>
                 </div>
               </div>           

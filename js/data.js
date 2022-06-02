@@ -1,3 +1,5 @@
+//const axios = require("axios");
+// import axios from "axios";
 const URL = "https://reqres.in/api/users?page=1";
 const rickAndMortyApi = "https://rickandmortyapi.com/api/character";
 
@@ -173,11 +175,13 @@ const replaceBtn = document.getElementById("btn-replace");
 }
 
 async function getDataFromApi(URL, rickAndMortyApi) {
-  const responseUser = await fetch(URL); // by default it's GET
-  const responseRick = await fetch(rickAndMortyApi); // by default it's GET
+  const responseUser = await axios.get(URL); 
+  const responseRick = await axios.get(rickAndMortyApi);
 
-  let resultUser = await responseUser.json();
-  let resultRick = await responseRick.json();
+  let resultUser = responseUser.data;
+  let resultRick = responseRick.data;
+  console.log(resultUser);
+  console.log(resultRick);
 
   let tbody = document.createElement("tbody");
   tbody.setAttribute("id", "user-list");

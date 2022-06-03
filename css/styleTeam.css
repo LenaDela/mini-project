@@ -257,6 +257,14 @@ tfoot > tr > td {
   justify-content: center;
 }
 
+.pages {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
 @media (min-width: 971px) and (max-width: 1439px) {
   th {
     font-size: 17px;

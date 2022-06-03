@@ -15,7 +15,7 @@ async function postDataApi(email, password) {
       "password": password
     })
     p.innerHTML = "Merci, vous vous êtes correctement authentifié.e"
-    window.localStorage.setItem(email, response.data.token)
+    window.localStorage.setItem("token", response.data.token)
     window.location.replace("loggedIn.html")
     console.log("SUCCESS", response.data)
   } catch (err) {

@@ -18,6 +18,11 @@ const isReplaceFilterActive = () =>
 
 function renderSelectList(list) {
   
+
+  // Une variable globale qui stocke la page où on est (variable actuelle), donc d'abord la page 1
+  // Split/Splice array/ Découper liste de sorte à n'afficher que les éléments de la page actuelle
+  // Fonctions pour passe à la page suivante + page précédente
+
   const select = document.getElementById("entries");
   while (select.firstChild) {
     select.removeChild(select.firstChild);
@@ -54,7 +59,7 @@ function renderList({listToRender, bodyId}) {
   let filteredListToRender = [].concat(listToRender); // you make a copy first
   // console.log("filters", filterVowel, filterAlphabet, filterLength);
   console.log("filteredListToRender", filteredListToRender);
-
+  
   if (isVowelFilterActive()) {
     filteredListToRender = filteredListToRender.filter((listItem) =>
       /^[aeiouy]/i.test(listItem.name)
@@ -72,6 +77,9 @@ function renderList({listToRender, bodyId}) {
       (listItem) => listItem?.name?.length <= 4
     );
   }
+
+  // dooooon't know what to do here
+  // listToRender.splice(0, 3);
 
   filteredListToRender.map((listItem) => {
     let individual = document.createElement("tr");
@@ -221,7 +229,7 @@ async function getDataFromApi(URL, rickAndMortyApi) {
 
   replaceBtn.addEventListener("click", () => replaceDataInTable({characters, users}));
   
-  renderSelectList(users); ///???? why is it working, even though not writing "name"??
+  renderSelectList(users);
 }
 
 getDataFromApi(URL, rickAndMortyApi);

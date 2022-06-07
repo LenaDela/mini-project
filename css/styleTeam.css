@@ -15,8 +15,45 @@ header {
   margin-bottom: 50px;
 }
 
+.select-styling {
+  appearance: none;
+  position: relative;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border-color: #874A57;
+  padding: 12px 20px;
+  width: 200px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  color: #874A57;
+  outline-color: #874A57;
+}
+
+.select-arrow {
+  position: relative;
+}
+
+.select-arrow::after {
+  position: absolute;
+  content: "\0076";
+  color: #874A57;
+  top: 10px;
+  right: 20px;
+  pointer-events: none;
+}
+
+.select-form {
+  padding: 20px 0;
+}
+
 h1 {
   font-size: 75px;
+}
+
+h3 {
+  font-family: rafelya, sans-serif;
 }
 
 .team-table {
@@ -30,7 +67,7 @@ h1 {
   box-shadow: 0 0 20px rgb(0 0 0 / 15%);
 }
 
-table {
+.table {
   table-layout: fixed;
   border-collapse: collapse;
   border-style: hidden;
@@ -47,10 +84,11 @@ tr {
   font-size: 25px;
   text-align: center;
   border-radius: 13px;
+  background-color: antiquewhite;
 }
 
-tbody > tr {
-  background-color: antiquewhite;
+tfoot > tr {
+  background-color: transparent;
 }
 
 th,
@@ -75,14 +113,6 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  /* position: absolute; */
-
-  /* bottom: 0.5px; */
-
-  /* overflow: hidden; */
-
-  /* background-size: contain; */
 }
 
 .styling-image {
@@ -153,6 +183,80 @@ tfoot > tr > td {
   text-align: right;
 }
 
+.align-middle {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-poke {
+  padding: 10px;
+  margin: 10px 40px 10px 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 13px;
+  width: 250px;
+  border: 0.5px solid antiquewhite;
+  color: antiquewhite;
+  font-size: 15px;
+  background-color: #874A57;
+}
+
+.text-button {
+  max-width: 150px;
+  font-size: 18px;
+}
+
+.pokecard {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid white;
+  border-radius: 13px;
+  width: 250px;
+  height: 400px;
+  margin: 50px 0;
+  position: relative;
+  background-image: linear-gradient(rgb(231 231 243 / 95.3%), rgb(255 255 0 / 50.2%)), url("../media/pokecolors.jpg");
+}
+
+.poke-name {
+  font-size: 40px;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.poke-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  position: absolute;
+  margin-bottom: 60px;
+  opacity: 0.85;
+}
+
+.poke-link {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 971px) and (max-width: 1439px) {
   th {
     font-size: 17px;
@@ -162,6 +266,10 @@ tfoot > tr > td {
   tr {
     font-size: 21px;
     text-align: center;
+  }
+
+  .table {
+    max-width: 2000px;
   }
 }
 
@@ -176,11 +284,15 @@ tfoot > tr > td {
     text-align: left;
   }
 
+  .table {
+    max-width: 600px;
+  }
+
   .table thead {
     display: none;
   }
 
-  table,
+  .table,
   td,
   tr {
     display: block;
@@ -198,11 +310,10 @@ tfoot > tr > td {
 
   tbody {
     width: 100%;
+    display: block;
   }
 
   table {
-    width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -213,14 +324,16 @@ tfoot > tr > td {
     box-shadow: none;
   }
 
-  .colleague {
+  .individual {
     position: relative;
     margin-bottom: 20px;
   }
 
   .firstname,
   .lastname,
-  .role {
+  .info-on-individual,
+  .status,
+  .species {
     width: calc(80% - 41px);
     border-right: 0.5px;
   }
@@ -231,7 +344,8 @@ tfoot > tr > td {
     font-weight: 400;
   }
 
-  .role {
+  .info-on-individual,
+  .species {
     border-bottom-left-radius: 13px;
     border-top: 0.5px;
     font-style: italic;
@@ -241,7 +355,7 @@ tfoot > tr > td {
     position: absolute;
     width: 20%;
     height: calc(100% - 2px);
-    top: 0;
+    top: 0.5px;
     right: 0;
     border-top-right-radius: 13px;
     border-bottom-right-radius: 13px;
@@ -287,8 +401,7 @@ tfoot > tr > td {
     display: none;
   }
 
-  table {
-    width: 100%;
+  .table {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -316,15 +429,14 @@ tfoot > tr > td {
     font-size: 20px;
   }
 
-  table {
-    width: 100%;
+  .table {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  .role {
+  .info-on-individual {
     text-overflow: ellipsis;
     overflow: hidden;
   }

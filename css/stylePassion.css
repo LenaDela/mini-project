@@ -1,0 +1,411 @@
+.container-home {
+  background-color: #F4B910;
+}
+
+header {
+  text-align: center;
+}
+
+.padding-horizontal {
+  padding: 0 15%;
+}
+
+.passion-img {
+  width: 80%;
+  max-width: 700px;
+  height: auto;
+}
+
+.content {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-of-content {
+  margin: 100px 0;
+  width: 100%;
+}
+
+.main-topic {
+  font-weight: bold;
+  font-family: rafelya, sans-serif;
+  font-size: 25px;
+  padding-bottom: 7px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0 8%;
+}
+
+.divided-content {
+  padding: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #253213;
+}
+
+a:active {
+  color: #F9E0DB;
+}
+
+h2 {
+  font-family: rafelya, sans-serif;
+  font-size: 55px;
+  width: 100%;
+  margin: 0;
+}
+
+h3 {
+  font-family: rafelya, sans-serif;
+  font-size: 35px;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  color: #4E8712;
+}
+
+.row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.activity-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.intro {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 45px 80px;
+  background-color: #874A57;
+  color: #F9E0DB;
+}
+
+.activity-type {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+.img-activity {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: bisque;
+  width: 50%;
+}
+
+.hike {
+  mix-blend-mode: multiply;
+}
+
+.sport,
+.art,
+.culture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  text-align: center;
+}
+
+.activity {
+  justify-content: center;
+  align-items: center;
+  width: calc(50% - 100px);
+  padding: 0 50px;
+}
+
+.activity p,
+ul {
+  font-size: 20px;
+}
+
+.spectacles {
+  height: 95px;
+  overflow: auto;
+}
+
+.footer {
+  padding: 40px 50px;
+  text-align: right;
+  background-color: #874A57;
+  color: #F9E0DB;
+}
+
+@media (min-width: 1817px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+
+  .activity > p {
+    font-size: 30px;
+  }
+
+  .main-topic > a {
+    font-size: 45px;
+  }
+
+  li {
+    font-size: 30px;
+  }
+
+  .activity > h3 {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1816px) {
+  h1 {
+    font-size: 70px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  .activity > p {
+    font-size: 25px;
+  }
+
+  .main-topic > a {
+    font-size: 35px;
+  }
+
+  li {
+    font-size: 25px;
+  }
+
+  .activity > h3 {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1037px) and (max-width: 1439px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  p {
+    font-size: 23px;
+  }
+
+  h2 {
+    font-size: 45px;
+  }
+
+  .activity > p {
+    font-size: 20px;
+  }
+
+  .main-topic > a {
+    font-size: 33px;
+  }
+
+  li {
+    font-size: 22px;
+  }
+
+  .activity > h3 {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1036px) {
+  nav {
+    justify-content: center;
+    width: 100%;
+    padding: 45px 0;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .sport,
+  .art,
+  .culture {
+    margin-bottom: 30px 0;
+  }
+
+  .activity > p {
+    font-size: 20px;
+  }
+
+  .main-topic > a {
+    font-size: 30px;
+  }
+
+  li {
+    font-size: 20px;
+  }
+
+  .activity > h3 {
+    font-size: 30px;
+  }
+
+  .footer {
+    font-size: 16px;
+    text-align: center;
+    padding: 30px 40px;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  nav {
+    justify-content: center;
+    width: 100%;
+    padding: 45px 0;
+  }
+
+  h1 {
+    font-size: 45px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  ul {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .divided-content {
+    margin: 20px 0;
+  }
+
+  .activity > p {
+    font-size: 18px;
+  }
+
+  .main-topic > a {
+    font-size: 25px;
+  }
+
+  li {
+    font-size: 18px;
+  }
+
+  .activity {
+    width: 100%;
+  }
+
+  .activity > h3 {
+    font-size: 25px;
+  }
+
+  .sport,
+  .art,
+  .culture {
+    margin: 15px 0;
+  }
+
+  .footer {
+    font-size: 16px;
+    text-align: center;
+    padding: 30px 40px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 424px) {
+  nav {
+    justify-content: center;
+    width: 100%;
+    padding: 45px 0;
+    font-size: 18px;
+  }
+
+  .nav-elements {
+    min-width: 84px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  ul {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .intro {
+    padding: 35px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .divided-content {
+    margin: 20px 0;
+  }
+
+  .activity {
+    width: 100%;
+  }
+
+  .activity > p {
+    font-size: 16px;
+  }
+
+  .main-topic > a {
+    font-size: 20px;
+  }
+
+  li {
+    font-size: 18px;
+  }
+
+  .activity > h3 {
+    font-size: 20px;
+  }
+
+  .sport,
+  .art,
+  .culture {
+    margin: 15px 0;
+  }
+
+  .footer {
+    font-size: 16px;
+    text-align: center;
+    padding: 30px 40px;
+  }
+}

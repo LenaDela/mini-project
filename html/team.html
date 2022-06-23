@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Lena's ZOL, suit les rencontres de la team par la jeune stagiaire développeuse Lena chez ZOL. Un petit survol des membres de l'équipe au travers des croisements.">
     <script src="https://kit.fontawesome.com/cc98416f81.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="styleTeam.css" />
-    <script src="data.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/styleTeam.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js"></script>
+    <script src="../js/data.js"></script>
     <title>Team</title>
 </head>
 <body class="container-home">
@@ -23,14 +24,29 @@
           <div class="nav-elements">
             <a href="form.html" title="Nous écrire">CONTACT</a>
           </div>
+          <div class="nav-elements nav-right">
+            <a href="login.html" title="Page de login">LOGIN</a>
+          </div>
         </nav>
       </header>
       <main class="content">
+          <div class="align-middle" id="select-top-entry">
+            <label for="entries" class="select-form">Bring to the top</label>
+            <div class="select-arrow">
+              <select name="entries" id="entries" class="select-styling"></select>
+          </div>
+          </div>
         <section class="intro-section">
             <div class="intro-header">
                 <h1>L'équipe</h1>
             </div>
         </section>
+        <div class="filter-buttons">
+          <button class="btn" id="btn-vowel">Names starting with a vowel</button>
+          <button class="btn" id="btn-alphabet">Put in alphabetical order</button>
+          <button class="btn" id="btn-length">Names of five letters or less</button>
+          <button class="btn" id="btn-replace">Wubba lubba dub dub</button>
+        </div>
         <section class="team-table">
           <table class="table" id="teamTable">
             <thead>
@@ -41,8 +57,7 @@
                 <th class="text-center rightcorner">AVATAR</th>
               </tr>
             </thead>
-          </tbody>
-          <tfoot id="tfoot">
+            <tfoot id="tfoot">
             <tr class="legend">
               <td class="title-legend"><h3>Légende</h3></td>
               <td class="footer-text-center">
@@ -66,9 +81,33 @@
             </tr>
           </tfoot>
         </table>
+        <table class="table" id="rickTable" style="display: none;">
+          <thead>
+            <tr class="table-header">
+              <th class="leftcorner">NOM</th>
+              <th>STATUS</th>
+              <th>ESPÈCE</th>
+              <th class="text-center rightcorner">AVATAR</th>
+            </tr>
+          </thead>
+        </table>
         </section>
       </main>
-      <footer>
+      <section class="pages">
+        <div id="pageDisplay" class="page-display">
+          <p id="firstPageNum" class="page-num">PAGE "page"</p>
+          <p id="pageNum" class="page-num">PAGE "page"</p>
+          <p id="lastPageNum" class="page-num">PAGE "page"</p>
+        </div>
+        <div class="page-buttons">
+          <button class="btn-change-page" id="btn-first-page" onclick="firstPage()" disabled> | < </button>
+          <button class="btn-change-page" id="btn-previous-page" onclick="previous()" disabled> < </button>
+          <span id="pageInfo"></span>
+          <button class="btn-change-page" id="btn-next-page" onclick="nextpage()" disabled>></button>
+          <button class="btn-change-page" id="btn-last-page" onclick="lastpage()" disabled>> |</button>
+        </div>
+      </section>
+      <footer id="footer">
         <div class="footer">Made with passion in Lyon ©</div>
       </footer>
 </body>
